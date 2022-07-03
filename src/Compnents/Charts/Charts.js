@@ -3,8 +3,7 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend, CategoryScale,
   LinearScale,
   BarElement,
   Title } from 'chart.js';
-import { Pie,Bar } from 'react-chartjs-2';
-import { faker } from '@faker-js/faker'
+import { Pie } from 'react-chartjs-2';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 ChartJS.register(
@@ -19,7 +18,7 @@ const data = {
   labels: ['Engineer', 'Doctor', 'Lawyer', 'Scientist', 'Accountant', 'Business'],
   datasets: [
     {
-      label: '# of Votes',
+      label: '# of Students',      
       data: [12, 19, 3, 5, 2, 3],
       backgroundColor: [ //"red","blue","green","violet","aqua","brown"
         'rgba(255, 0, 0, 0.7)',
@@ -38,6 +37,10 @@ const data = {
         // 'rgba(255, 159, 64, 1)',
       ],
       borderWidth: 1,
+      legend:{
+        display:true,
+        position:'right'
+      }
     },
   ],
 };

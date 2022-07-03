@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import './forms.css';
 export default function Login(props) {
  const [creds, setCreds]=useState({user:"",pass:""})
  const [errors, setErrors]=useState({user:{},pass:{}})
@@ -35,17 +35,15 @@ export default function Login(props) {
   };
   return (
     <>
+    <div>
       <div
-        style={{
-          width: "40vw",
-          position: "absolute",
-          left: "30%",
-          top: "20%"
-        }}
+      className="container"
       >
+        <div className="d-flex justify-content-center align-items-center" >
+          <div className="login" >
         <h1>Login</h1>
-        <form>
-          <div className="formGroup">
+        <form >
+          <div className="formGroup col-sm-11 col-md-11 ">
             <label>Username:</label>
             <input
               type="text"
@@ -58,7 +56,7 @@ export default function Login(props) {
               <span className="text-danger">Please enter a name</span>
             )}
           </div>
-          <div className="formGroup">
+          <div className="formGroup col-sm-11 col-md-11 ">
             <label>Password:</label>
             <input type="text" onChange={onValueChange} name="pass" value={creds.pass} className="form-control" />
           </div>
@@ -75,6 +73,9 @@ export default function Login(props) {
             </div>
           </div>
         </form>
+        </div>
+        </div>
+        </div>
       </div>
     </>
   );

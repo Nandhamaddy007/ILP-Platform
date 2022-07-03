@@ -20,7 +20,7 @@ export default function PublicDashboard(props){
 </div>
     </div>
 </div>
-<div className='row p2-2'>
+<div className='row p-2'>
     <div className='offset-md-2 col-md-3'>
     <div class="alert alert-success" role="alert">
   Over 11,000 Teachers
