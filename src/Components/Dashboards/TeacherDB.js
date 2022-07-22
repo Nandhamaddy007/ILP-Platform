@@ -1,17 +1,18 @@
 import Groups from "./Groups";
-import LeftPane from "./leftPane";
+import LeftDash from "./Leftdash";
+// import LeftPane from "./leftPane";
 
 export default function TeacherDashboard(props){
     return(
         <>
-       <h1>Hello [Teacher name]</h1>
-        <LeftPane
-        icons={false}
-        charts={false} 
-        right={false}
-         name="Hello [Teacher name]"
-        />
+        <div className="row">
+            <div className="col-9 pt-2"> <h1>Hello [Teacher name]</h1></div>
+            <div className="col-3"> <LeftDash /></div>
+        </div>
         <Groups />
+   
+      
+        
        
         </>
     )
