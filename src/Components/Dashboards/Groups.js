@@ -20,7 +20,7 @@ export default function Groups(props){
               <div id={val} class="accordion-collapse collapse" aria-labelledby={val+"heading"} 
               data-bs-parent="#classAccordion" >
                 <div class="accordion-body">
-                  <ol>
+                  <ol className="d-flex flex-column" style={{paddingRight:"3%"}}>
                     {Object.keys(sample[val]).map((text,i)=>{
                       return(
 <li className=" card">
