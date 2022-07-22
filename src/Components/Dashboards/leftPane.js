@@ -53,13 +53,14 @@ export default function LeftPane(props){
         </ul>
     </div>
 </div>
-<div class="container-fluid">
+{props.right &&<div class="container-fluid">
     <div class="row">
         <div class="col min-vh-100 p-4">
             {/* <!-- toggler --> */}
            
            <h1>{props.name}</h1>
-           <div className='row pt-4 container'>
+           {/* icons toggle */}
+           {props.icons && <div className='row pt-4 container'>
             {/* districts icon */}
             <div className='offset-2 col-sm-12 col-md-2 col-lg-2 m-2 bg-warning bg-gradient rounded'>
                 <div>                
@@ -96,9 +97,10 @@ export default function LeftPane(props){
             
                 <div className='h2 text-center'>110,000+ Students</div>
             </div>
-           </div>
+           </div>}
             {/* end of row */}
-           <div className='row pt-4'  >
+            {/* toggle charts */}
+           {props.charts && <div className='row pt-4'  >
             
             <div className='col shadow p-3 mb-5 bg-white rounded' >
                 <div 
@@ -116,7 +118,7 @@ export default function LeftPane(props){
                 <BarChart /></div></div>
                     
             
-            </div>
+            </div>}
 
 
 
@@ -129,7 +131,7 @@ export default function LeftPane(props){
     </div>
     
    
-</div>
+</div>}
 </>
     )
 }

@@ -1,15 +1,15 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import DashboardLayout from './Compnents/DashboardLayout';
-import BlockHeadDashboard from './Compnents/Dashboards/BlockHeadDB';
-import DistricteadDashboard from './Compnents/Dashboards/DistrictHeadDB';
-import PublicDashboard from './Compnents/Dashboards/PublicDashboard';
-import StateHeadDashboard from './Compnents/Dashboards/StateHeadDB';
-import StudentsdDashboard from './Compnents/Dashboards/StudentsDB';
-import TeacherDashboard from './Compnents/Dashboards/TeacherDB';
-import Login from './Compnents/Forms/Login';
-import Navbar from './Compnents/Navbar';
+import DashboardLayout from './Components/DashboardLayout';
+import BlockHeadDashboard from './Components/Dashboards/BlockHeadDB';
+import DistricteadDashboard from './Components/Dashboards/DistrictHeadDB';
+import PublicDashboard from './Components/Dashboards/PublicDashboard';
+import StateHeadDashboard from './Components/Dashboards/StateHeadDB';
+import StudentsdDashboard from './Components/Dashboards/StudentsDB';
+import TeacherDashboard from './Components/Dashboards/TeacherDB';
+import Login from './Components/Forms/Login';
+import Navbar from './Components/Navbar';
 
 
 function App() {
