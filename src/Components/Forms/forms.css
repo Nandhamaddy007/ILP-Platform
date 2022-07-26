@@ -109,7 +109,7 @@
   font-family:  sans-serif;
   margin-top: 20px;
 }
-.form__title{
+.login__title{
   margin-bottom: 20px;
   text-align: center;
   color:rgb(2, 5, 14) ;
@@ -193,9 +193,7 @@ button{
     height: revert;
     padding: 2rem;
   }
-  .form__input--group {
-    width: 21rem;
-  }
+ 
 
   .login-box {
     position: revert;
@@ -209,10 +207,7 @@ button{
     transition: transform 0.8s ease-in-out, opacity 0.45s linear;
   }
 
-  .form__title,
-  .account-subtitle {
-    margin: 2rem 0;
-  }
+  
 
 .login-left {
     position: revert;
@@ -231,7 +226,7 @@ button{
     height: auto;
     max-width: 475px;
     overflow: hidden;
-    /* line-height: 1.5rem; */
+  
   }
 
   .login-wrapper {
