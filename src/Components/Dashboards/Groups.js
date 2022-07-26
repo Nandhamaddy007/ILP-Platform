@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 export default function Groups(props){
   let sample={
     Class10:{Doctors:"20",Engineers:"7",Lawyers:"14"},
@@ -23,9 +24,10 @@ export default function Groups(props){
                   <ol className="d-flex flex-column" style={{paddingRight:"4%"}}>
                     {Object.keys(sample[val]).map((text,i)=>{
                       return(
-<li className=" card mt-2">
+  <Link to={"/filter/"+val+"/"+text}>
+  <li className=" card mt-2">
   <div className="card-body">{text} <span className="badge text-bg-success float-end">{sample[val][text]}</span> </div></li>
-                      )
+  </Link>   )
                     })}                                     
                   </ol>
                 </div>

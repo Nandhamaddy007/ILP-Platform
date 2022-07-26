@@ -4,11 +4,13 @@ import './App.css';
 import DashboardLayout from './Components/DashboardLayout';
 import BlockHeadDashboard from './Components/Dashboards/BlockHeadDB';
 import DistricteadDashboard from './Components/Dashboards/DistrictHeadDB';
+import FilterScreen from './Components/Dashboards/FilterScreen';
 import PublicDashboard from './Components/Dashboards/PublicDashboard';
 import StateHeadDashboard from './Components/Dashboards/StateHeadDB';
 import StudentsdDashboard from './Components/Dashboards/StudentsDB';
 import TeacherDashboard from './Components/Dashboards/TeacherDB';
 import Login from './Components/Forms/Login';
+import Registration from './Components/Forms/Registration';
 import Navbar from './Components/Navbar';
 
 
@@ -27,7 +29,10 @@ function App() {
     <Route path="block" element={<BlockHeadDashboard />} />
     <Route path="district" element={<DistricteadDashboard />} />
     <Route path="state" element={<StateHeadDashboard />} />
+    <Route path="filter" element={<FilterScreen />} />
+    <Route path="filter/:class/:type" element={<FilterScreen />} />
     <Route path="login" element={<Login />} />
+    <Route path="register" element={<Registration />} />
     </Route>
    </Routes>
    </BrowserRouter>
