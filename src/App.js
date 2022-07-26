@@ -11,6 +11,7 @@ import TeacherDashboard from './Components/Dashboards/TeacherDB';
 import Login from './Components/Forms/Login';
 import Navbar from './Components/Navbar';
 import Register from "./Components/Forms/Register";
+import ResetPassword from "./Components/Forms/ResetPassword";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="state" element={<StateHeadDashboard />} />
             <Route path="login" element={<Login />} />
             <Route path="register" element={<Register />} />
+            <Route path="resetPassword" element={<ResetPassword />} />
           </Route>
         </Routes>
       </BrowserRouter>
