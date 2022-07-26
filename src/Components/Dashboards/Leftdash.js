@@ -15,7 +15,7 @@ setStyle({width:"250px"})
         <>
         
 <div id="mySidebar" className="sidebar" style={style}>
-  <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>×</a>
+  <a href="#" className="closebtn" onClick={closeNav}>×</a>
   <a href="#">About</a>
   <a href="#">Services</a>
   <a href="#">Clients</a>
