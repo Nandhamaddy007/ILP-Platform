@@ -39,7 +39,7 @@ const Register = () => {
 
                     <div className="form-text">
                       Already have an account?
-                      <Link to="login" className="link">
+                      <Link to="/login" className="link">
                         Login
                       </Link>
                     </div>
@@ -161,7 +161,7 @@ export const HiddenSecond = () => {
     const valid = validate(formValues);
     if (!valid.confirmPassword && !valid.password && !valid.otp) {
       postData();
-      navigate("/login");
+      navigate("login");
     } else {
       setFormErrors(valid);
     }
