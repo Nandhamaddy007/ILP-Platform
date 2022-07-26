@@ -10,28 +10,27 @@ import StudentsdDashboard from './Components/Dashboards/StudentsDB';
 import TeacherDashboard from './Components/Dashboards/TeacherDB';
 import Login from './Components/Forms/Login';
 import Navbar from './Components/Navbar';
-
+import Register from "./Components/Forms/Register";
 
 function App() {
-  
- 
   return (
-   <>
-   <BrowserRouter>
-   <Navbar  />
-   <Routes>
-    <Route path="/" element={<DashboardLayout />} >
-      <Route index element={<PublicDashboard />} />
-    <Route path="student" element={<StudentsdDashboard />} />
-    <Route path="teacher" element={<TeacherDashboard />} />
-    <Route path="block" element={<BlockHeadDashboard />} />
-    <Route path="district" element={<DistricteadDashboard />} />
-    <Route path="state" element={<StateHeadDashboard />} />
-    <Route path="login" element={<Login />} />
-    </Route>
-   </Routes>
-   </BrowserRouter>
-   </>
+    <>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<DashboardLayout />}>
+            <Route index element={<PublicDashboard />} />
+            <Route path="student" element={<StudentsdDashboard />} />
+            <Route path="teacher" element={<TeacherDashboard />} />
+            <Route path="block" element={<BlockHeadDashboard />} />
+            <Route path="district" element={<DistricteadDashboard />} />
+            <Route path="state" element={<StateHeadDashboard />} />
+            <Route path="login" element={<Login />} />
+            <Route path="register" element={<Register />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
