@@ -10,9 +10,9 @@ import StateHeadDashboard from './Components/Dashboards/StateHeadDB';
 import StudentsdDashboard from './Components/Dashboards/StudentsDB';
 import TeacherDashboard from './Components/Dashboards/TeacherDB';
 import Login from './Components/Forms/Login';
-import Registration from './Components/Forms/Registration';
 import Navbar from './Components/Navbar';
-
+import Register from "./Components/Forms/Register";
+import ResetPassword from "./Components/Forms/ResetPassword";
 
 function App() {
   
@@ -31,8 +31,9 @@ function App() {
     <Route path="state" element={<StateHeadDashboard />} />
     <Route path="filter" element={<FilterScreen />} />
     <Route path="filter/:class/:type" element={<FilterScreen />} />
-    <Route path="login" element={<Login />} />
-    <Route path="register" element={<Registration />} />
+    <Route path="/login" element={<Login />} />
+    <Route path="register" element={<Register />} />
+    <Route path="resetPassword" element={<ResetPassword />} />
     </Route>
    </Routes>
    </BrowserRouter>
