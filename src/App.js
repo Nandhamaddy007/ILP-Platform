@@ -1,3 +1,4 @@
+
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
@@ -16,6 +17,7 @@ import ResetPassword from "./Components/Forms/ResetPassword";
 
 function App() {
   return (
+
     <>
       <BrowserRouter>
         <Navbar />
@@ -36,6 +38,8 @@ function App() {
         </Routes>
       </BrowserRouter>
     </>
+
+
   );
 }
 
