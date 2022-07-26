@@ -5,12 +5,11 @@ import { useState } from "react";
 import image from "../../assets/logo/new_log.png";
 import Popover from "@mui/material/Popover";
 import Typography from "@mui/material/Typography";
-
+import axios from "axios";
 const Register = () => {
   const [show, setShow] = useState(false);
   const ShowHide = (ev) => {
     // ev.preventDefault();
-    console.log("hiiiiiiiiiiiiiiiiiiiii");
     setShow(!show);
   };
 
@@ -64,14 +63,16 @@ export const HiddenFirst = ({ show }) => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
-    console.log(formValues);
+    // console.log(formValues);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const valid = validate(formValues);
-    if (!valid.mobileNumber) {
+    if (!valid.mobileNumber && !valid.userName) {
+      postData();
       show();
+      console.log(formValues);
     } else {
       setFormErrors(valid);
     }
@@ -85,6 +86,13 @@ export const HiddenFirst = ({ show }) => {
   //     show();
   //   }
   // }, [formErrors]);
+  const postData = (ev) => {
+    const inputData = formValues;
+    console.log("post data" + inputData);
+    axios.post("", inputData).then((response) => {
+      console.log(response);
+    });
+  };
   const validate = (values) => {
     const errors = {};
     const regex = /^\+?[1-9][0-9]{9}$/;
@@ -145,19 +153,26 @@ export const HiddenSecond = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
-    console.log(formValues);
+    // console.log(formValues);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const valid = validate(formValues);
     if (!valid.confirmPassword && !valid.password && !valid.otp) {
+      postData();
       navigate("/login");
     } else {
       setFormErrors(valid);
     }
   };
-
+  const postData = (ev) => {
+    const inputData = formValues;
+    console.log("post data" + inputData);
+    axios.post("", inputData).then((response) => {
+      console.log(response);
+    });
+  };
   const validate = (values) => {
     const errors = {};
     const regex =
