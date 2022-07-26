@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap");
 *,
 *::before,
 *::after {
@@ -16,7 +16,7 @@
   color: #a0a0a0;
   display: flex;
   justify-content: center;
-  font-family: 'Fjalla One', sans-serif;
+  /* font-family: 'Fjalla One', sans-serif; */
 }
 
 .register-body {
@@ -49,22 +49,17 @@
   min-height: 500px;
   width: 100%;
 }
-.logo{
-   width: 25.5rem;
-    position: relative;
-    top: 3rem;
-        filter: drop-shadow(2px 4px 6px black);
+.logo {
+  width: 25.5rem;
+  position: relative;
+  top: 3rem;
+  filter: drop-shadow(2px 4px 6px black);
 }
-
-
-    
-
 
 .register-left {
   align-items: center;
-  /* background-image: url("https://images.pexels.com/photos/1762851/pexels-photo-1762851.jpeg?auto=compress&cs=tinysrgb&w=600"); */
   background: url("../images/India-child-labour-school-holiday-1.jpg");
-background-color: #00000069;
+  background-color: #00000069;
   border-radius: 6px 0 0 6px;
   flex-direction: column;
   background-size: cover;
@@ -160,7 +155,7 @@ background-color: #00000069;
 
 .form__button {
   width: 100%;
-  padding: 0.65rem 6.85rem;
+    padding: 0.5rem 5.75rem;
   font-weight: bold;
   color: #fff;
   outline: none;
@@ -188,6 +183,7 @@ background-color: #00000069;
 }
 .form-text {
   margin-top: 1.875rem;
+  text-align: center;
 }
 .form__rest__button {
   width: 100%;
@@ -202,6 +198,54 @@ background-color: #00000069;
 }
 .form__rest__button:hover {
   background-color: #11a7f3;
+}
+@media (max-width: 995px) {
+  .register-body {
+    height: auto;
+    max-width: 475px;
+    overflow: hidden;
+    /* line-height: 1.5rem; */
+  }
+
+  .register-wrapper {
+    position: static;
+    transform: none;
+    width: revert;
+    height: revert;
+    padding: 2rem;
+  }
+  .form__input--group {
+    width: 21rem;
+  }
+
+  .register-box {
+    position: revert;
+    width: 100%;
+    height: auto;
+  }
+
+  .register__form {
+    max-width: revert;
+    padding: 1.5rem 2.5rem 2rem;
+    transition: transform 0.8s ease-in-out, opacity 0.45s linear;
+  }
+
+  .form__title,
+  .account-subtitle {
+    margin: 2rem 0;
+  }
+
+  .register-left {
+    position: revert;
+    height: auto;
+    width: 100%;
+    padding: 3rem 2rem;
+    display: flex;
+  }
+
+  .register-left {
+    display: none;
+  }
 }
 @media (max-width: 825px) {
   .register-body {
@@ -219,7 +263,8 @@ background-color: #00000069;
     padding: 2rem;
   }
   .form__input--group {
-    width: 23rem;
+    width: 20rem;
+
   }
 
   .register-box {
@@ -228,7 +273,7 @@ background-color: #00000069;
     height: auto;
   }
 
-.register__form{
+  .register__form {
     max-width: revert;
     padding: 1.5rem 2.5rem 2rem;
     transition: transform 0.8s ease-in-out, opacity 0.45s linear;
@@ -315,7 +360,10 @@ background-color: #00000069;
   .form__input--group {
     width: 110%;
   }
-
+._btn {
+ 
+    padding: 0.5rem 3.75rem;
+  } 
   .register-box {
     position: revert;
     width: 100%;
@@ -351,7 +399,8 @@ background-color: #00000069;
   }
   .form__input--group {
     width: 20rem;
-    padding: 0.5rem 1rem;
+   padding: 0.2rem 0.5rem;
+    margin-bottom: 0;
   }
   .register-body {
     border-radius: 2rem;
@@ -386,6 +435,7 @@ background-color: #00000069;
   .form__input--group {
     width: 20rem;
     padding: 0.25rem 0.75rem;
+    margin-bottom: 0;
   }
   .register-body {
     border-radius: 1.5rem;
@@ -404,7 +454,7 @@ background-color: #00000069;
     margin-bottom: 0.75rem;
   }
 
- .register__form {
+  .register__form {
     padding: 0.75rem 1.5rem 1rem;
   }
 }
@@ -421,6 +471,7 @@ background-color: #00000069;
   .form__input--group {
     width: 18rem;
     padding: 0.1rem 0.5rem;
+    margin-bottom: 0;
   }
   .register-body {
     border-radius: 2rem;
@@ -449,13 +500,18 @@ background-color: #00000069;
     max-width: 100px;
     overflow: hidden;
   }
-._btn{padding: 0.5rem 4.75rem;}
+  ._btn {
+    padding: 0.5rem 1.75rem;
+ 
+  }   
+  
   .main-container {
     padding: 0.5rem;
   }
   .form__input--group {
-    width: 15rem;
+    width: 16rem;
     padding: 0.1rem 0.5rem;
+    margin-bottom: 0;
   }
   .register-body {
     border-radius: 2rem;
@@ -463,9 +519,7 @@ background-color: #00000069;
   .main-container {
     padding: 0.5rem;
   }
- 
 
- 
   .register-body {
     border-radius: 2rem;
   }
@@ -483,7 +537,22 @@ background-color: #00000069;
     margin-bottom: 0.1rem;
   }
 
- .register__form{
+  .register__form {
     padding: 0.5rem 1.25rem 0.75rem;
   }
 }
+.error{
+  color: red;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
