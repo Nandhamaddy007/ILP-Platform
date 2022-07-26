@@ -2,38 +2,35 @@ import { useState } from "react";
 import "../Forms/forms.css";
 import { Link } from "react-router-dom";
 import image from "../../assets/logo/new_log.png";
+import axios from "axios";
  function Login() {
- const [number,setNumber]=useState("");
- const [password,setPassword]=useState("");
-   
- const [numberErr,setNumberErr]=useState({});
- const [passwordErr,setPasswordErr]=useState({});
- 
- const onSubmit=(e)=>{
-  e.preventDefault();
-  const isValid=formValidation();
-  if( isValid){
-    setNumber("");
-    setPassword("");
-  }
- }
- const formValidation=()=>{
-  const numberErr={};
-  const passwordErr={};
-  let isValid=true;
-  if(number.trim().length<10){
-    numberErr.numberLong="Enter the valid number!";
-    isValid=false;
-  }
-  if(password.trim().length<6){
-    passwordErr.passwordLong="Enter the password!";
-    isValid=false;
-  }
-  
-  setNumberErr(numberErr);
-  setPasswordErr(passwordErr);
-  return isValid;
+ const [number,setNumber]=useState('')
+ const [password,setPassword]=useState('')
 
+
+   console.log({number,password})
+
+ const handleNumber =(e)=>{
+  setNumber(e.target.value)
+ }
+ const handlePassword =(e)=>{
+  setPassword(e.target.value)
+ }
+ 
+ const handleApi=()=>{
+  console.log({number,password})
+  axios.post('',{
+    number:number,
+    password:password
+  }).then(result=>{
+console.log(result.data)
+alert ('success')
+  })
+
+  .catch(error=>{
+    alert('Enter correct mobile number and password ')
+    console.log(error)
+  })
  }
   return (
     <main className="class-container">
@@ -50,37 +47,33 @@ import image from "../../assets/logo/new_log.png";
     <h1 className="form__title">Login</h1>
 
      
-          <div class="divider"></div>
+          <div className="divider"></div>
        
-        <form  onSubmit={onSubmit}>
+        <form >
           <div className="formGroup col-sm-11 col-md-11">
             
             <input 
              className="form-control"
              placeholder="Enter your Mobile Number"
-              type="number"
+              type='tel'
               value={number}
-             onChange={(e) => {setNumber(e.target.value)}}/>
+             onChange={handleNumber}/>
             </div>
-            {Object.keys(numberErr).map((key)=>{
-           return <div style={{color:"red"}}>{numberErr[key]}</div>
-            })}
+           
     
           <div className="formGroup col-sm-11 col-md-11 ">
             <input className="form-control"
              placeholder='Enter your password'
              type='password'
              value={password}
-             onChange={(e) => {setPassword(e.target.value)}}/>
+             onChange={handlePassword}/>
           </div>
-          {Object.keys(passwordErr).map((key)=>{
-           return <div style={{color:"red"}}>{passwordErr[key]}</div>
-            })}
+         
          
           <div className="formGroup">
             <div className="row">
               <div className="col">
-              <button type='submit' id='submit-button' className="submit__button">
+              <button type='submit'  className="submit__button" onClick={handleApi}>
             Login
           </button>
               </div>
@@ -94,7 +87,7 @@ import image from "../../assets/logo/new_log.png";
                     <span className="span-or">or</span>
                   </div>
           <div className="reg">
-          <p className="new-account">Don't have an Account?<Link to="/Register"  className="new-registration" > Register</Link></p>
+          <p className="new-account">Don't have an Account?<Link to="register"  className="new-registration" > Register</Link></p>
           </div>
         </form>
         </div>
