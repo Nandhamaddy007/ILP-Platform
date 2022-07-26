@@ -2,7 +2,7 @@ import LeftDash from "./Leftdash";
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from "react";
 import EditStudent from "../Forms/EditStudent";
-
+import './dashboard.css'
 export default function FilterScreen(props){
   let data=useParams()
   const [filters,setFilters] =useState({class:"",type:""})
@@ -78,11 +78,13 @@ setEditData({
     }
     return(
         <>
-         <div> <LeftDash /></div>
-        <h1>Filter Screen</h1>
+         
+        
       
        {editData && <EditStudent data={editData} />}
         <div className="container">
+        <div  > <h1>Filter Screen</h1><LeftDash /></div>
+        <br/>
         <div className="row">
             <div className="col">
                 <label htmlFor="class">Class :</label>
@@ -107,8 +109,8 @@ setEditData({
                 </select>
             </div>
             </div>
-            <div className="mt-5 pb-0 card">
-                <table className="table table-striped table-hover">
+            <div className="mt-5 scroller">
+                <table className="table table-striped table-hover" >
                     <thead className="table-secondary">
                     <tr>
                         <th scope="col">Name</th>
@@ -139,8 +141,9 @@ setEditData({
                     })}
                     </tbody>
                 </table>
-                {studentData.length<1 && <h5 className="pt-5"
-                style={{position:"absolute",left:"41%"}}
+                
+                {studentData.length<1 && <h5
+                style={{position:"absolute",left:"35%",marginTop:"5%"}}
                 >No results found</h5>}
 
             </div>

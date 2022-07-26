@@ -32,13 +32,33 @@ data-bs-backdrop="static" data-bs-keyboard="false"
         </div>
         <div className="row mt-3">
             <div className="col"><label>Primary Task:</label></div>
-            <div className="col"><label>{props.data.pTask}</label></div>
-            
+            <div className="col">  <select className="form-control" name="type" id="type" value={props.data.pTask}>
+                <option></option>
+                    <option>Doctor</option>
+                    <option>Engineer</option>
+                    <option>Lawyer</option>
+                    <option>Scientist</option>
+                    <option>Police</option>
+                    <option>Chef</option>
+                    <option>Farmer</option>
+                </select>
+            {/* <div className="col"><label>{props.data.pTask}</label></div> */}
+            </div>     
         </div>
         <div className="row mt-3">
             <div className="col"><label>Secondary Task:</label></div>
+            {/* <div className="col"> <select className="form-control" name="type"  id="type" value={props.data.sTask}>
+                <option></option>
+                    <option>Doctor</option>
+                    <option>Engineer</option>
+                    <option>Lawyer</option>
+                    <option>Scientist</option>
+                    <option>Police</option>
+                    <option>Chef</option>
+                    <option>Farmer</option>
+                </select>            
+            </div> */}
             <div className="col"><label>{props.data.sTask}</label></div>
-            
         </div>
         <div className="row mt-3">
             <div className="col"><label htmlFor="">Comments: </label></div>

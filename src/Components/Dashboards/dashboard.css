@@ -76,3 +76,7 @@
     .sidebar {padding-top: 15px;}
     .sidebar a {font-size: 18px;}
   }
+  @media screen and (max-width: 600px) {
+    .scroller {overflow:scroll;}
+    
+  }
