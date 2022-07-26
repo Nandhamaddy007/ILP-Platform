@@ -1,82 +1,102 @@
 import { useState } from "react";
-import './forms.css';
-export default function Login(props) {
- const [creds, setCreds]=useState({user:"",pass:""})
- const [errors, setErrors]=useState({user:{},pass:{}})
- var onValueChange = (e) => {
-    setCreds({
-        ...creds,
-        [e.target.name]:e.target.value
-    })
-  };
-  var errorsCheck=()=>{
-    var name,pass=true
-    var err=false
-    if(creds.name.length<1){
-        name="Please enter name"
-        err=true
-    }else if(creds.pass.length<3){
-        pass="Password must contain atleast 3 characters"
-        err=true
-    }
-    setErrors({
-        user:{length:name},
-        pass:{length:pass}
-    })
-    return err
-  }
+import "../Forms/forms.css";
+import { Link } from "react-router-dom";
+import image from "../../assets/logo/new_log.png";
+import axios from "axios";
 
-  var login = (e) => {
-    e.preventDefault();   
-    if(errorsCheck){
-        window.location.replace("/"+creds.user.toLocaleLowerCase());
-    }
-    
-  };
+ const Login=()=>{
+ const [number,setNumber]=useState('')
+ const [password,setPassword]=useState('')
+ const handleNumber =(e)=>{
+  console.log(e.target.value)
+  setNumber(e.target.value)
+ }
+ const handlePassword =(e)=>{
+  setPassword(e.target.value)
+ }
+ 
+ const handleSubmit=(e)=>{
+e.preventDefault()
+console.log("submitted form====>")
+axios.post('',{
+number:number,
+password:password})
+.then((response)=>{
+  console.log(response.data)
+  alert('successfully')
+})
+.catch((err)=>{
+  console.log(err)
+  console.log(err.response)
+  alert('Enter the correct password')
+})
+ }
+  
   return (
-    <>
-    <div>
-      <div
-      className="container"
-      >
-        <div className="d-flex justify-content-center align-items-center" >
-          <div className="login" >
-        <h1>Login</h1>
-        <form >
+    <main className="class-container">
+        <div className="login-body">
+          <div className="login-wrapper">
+            <div className="login-container">
+              <div className="login-box">
+                <div className="login-left">
+                  <img src={image} alt="logo" className="logo" />
+                </div>
+                <div className="login-right">
+                  <div className="login-right-wrap">
+                   
+    <h1 className="login__title">Login</h1>
+
+     
+          <div className="divider"></div>
+       
+        <form  onSubmit={handleSubmit}>
+          <div className="formGroup col-sm-11 col-md-11">
+            
+            <input 
+             className="form-control"
+             placeholder="Enter your Mobile Number"
+              type='tel'
+              value={number}
+             onChange={handleNumber} required name='number'/>
+            </div>
+           
+    
           <div className="formGroup col-sm-11 col-md-11 ">
-            <label>Username:</label>
-            <input
-              type="text"
-              value={creds.user}
-              onChange={onValueChange}
-              name="user"
-              className="form-control"
-            />
-            {errors.name && (
-              <span className="text-danger">Please enter a name</span>
-            )}
+            <input className="form-control"
+             placeholder='Enter your password'
+             type='password'
+             value={password}
+             onChange={handlePassword} required name='password'/>
           </div>
-          <div className="formGroup col-sm-11 col-md-11 ">
-            <label>Password:</label>
-            <input type="text" onChange={onValueChange} name="pass" value={creds.pass} className="form-control" />
-          </div>
+         
+         
           <div className="formGroup">
             <div className="row">
               <div className="col">
-                <button className="btn btn-success" onClick={login}>
-                  Login
-                </button>
+              <button type='submit' value="login" className="submit__button" >
+            Login
+          </button>
               </div>
-              <div className="col">
-                <button className="btn btn-danger">Cancel</button>
-              </div>
-            </div>
+               </div>
+          </div>
+          <p  class="paragraph">
+       <Link to="/resetPassword" className="new-password">Forgot Password?</Link>
+    </p>
+          <div className="login-or">
+                    <span className="or-line"></span>
+                    <span className="span-or">or</span>
+                  </div>
+          <div className="reg">
+          <p className="new-account">Don't have an Account?<Link to="/register"  className="new-registration" > Register</Link></p>
           </div>
         </form>
         </div>
         </div>
         </div>
-      </div>
-    </>
+       </div>
+       </div>
+        </div>
+        </main>
   );
-}
+  }
+export default Login;

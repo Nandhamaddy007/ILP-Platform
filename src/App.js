@@ -32,8 +32,8 @@ function App() {
             <Route path="filter" element={<FilterScreen />} />
             <Route path="filter/:class/:type" element={<FilterScreen />} />
             <Route path="/login" element={<Login />} />
-            <Route path="register" element={<Register />} />
-            <Route path="resetPassword" element={<ResetPassword />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/resetPassword" element={<ResetPassword />} />
           </Route>
         </Routes>
       </BrowserRouter>
