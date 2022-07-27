@@ -161,7 +161,7 @@ export const HiddenSecond = () => {
     const valid = validate(formValues);
     if (!valid.confirmPassword && !valid.password && !valid.otp) {
       postData();
-      navigate("login");
+      navigate("/login");
     } else {
       setFormErrors(valid);
     }
