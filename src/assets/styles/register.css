@@ -30,7 +30,7 @@
   width: 100%;
   height: 100%;
   max-width: 825px;
-  vertical-align: middle;
+  /* vertical-align: middle; */
 }
 .container {
   width: 100%;
@@ -143,15 +143,6 @@
   width: 42px;
 }
 
-.facebook {
-  position: relative;
-  top: 4px;
-  margin: 0 3px;
-}
-.google {
-  position: relative;
-  top: 4px;
-}
 
 .form__button {
   width: 100%;
@@ -204,7 +195,7 @@
     height: auto;
     max-width: 475px;
     overflow: hidden;
-    /* line-height: 1.5rem; */
+
   }
 
   .register-wrapper {
@@ -215,7 +206,7 @@
     padding: 2rem;
   }
   .form__input--group {
-    width: 21rem;
+    width: 19rem;
   }
 
   .register-box {
@@ -311,7 +302,7 @@
     padding: 1.5rem;
   }
   .form__input--group {
-    width: 22rem;
+    width: 19rem;
   }
 
   .register-box {
@@ -320,7 +311,7 @@
     height: auto;
   }
 
-  form {
+ .register__form{
     max-width: revert;
     padding: 1.5rem 2.5rem 2rem;
     transition: transform 0.8s ease-in-out, opacity 0.45s linear;
@@ -346,7 +337,7 @@
 @media (max-width: 650px) {
   .register-body {
     height: auto;
-    max-width: 550px;
+    max-width: 450px;
     overflow: hidden;
   }
 
@@ -355,22 +346,19 @@
     transform: none;
     width: revert;
     height: revert;
-    padding: 2rem;
+    padding: 1.5rem;
   }
   .form__input--group {
-    width: 110%;
+    width: 19rem;
   }
-._btn {
- 
-    padding: 0.5rem 3.75rem;
-  } 
+
   .register-box {
     position: revert;
     width: 100%;
     height: auto;
   }
 
-  form {
+ .register__form{
     max-width: revert;
     padding: 1.5rem 2.5rem 2rem;
     transition: transform 0.8s ease-in-out, opacity 0.45s linear;
@@ -433,7 +421,7 @@
     padding: 0.75rem;
   }
   .form__input--group {
-    width: 20rem;
+    width: 19rem;
     padding: 0.25rem 0.75rem;
     margin-bottom: 0;
   }
@@ -509,7 +497,7 @@
     padding: 0.5rem;
   }
   .form__input--group {
-    width: 16rem;
+    width: 100%;
     padding: 0.1rem 0.5rem;
     margin-bottom: 0;
   }

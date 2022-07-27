@@ -17,7 +17,6 @@ import ResetPassword from "./Components/Forms/ResetPassword";
 
 function App() {
   return (
-
     <>
       <BrowserRouter>
         <Navbar />
@@ -38,8 +37,6 @@ function App() {
         </Routes>
       </BrowserRouter>
     </>
-
-
   );
 }
 
