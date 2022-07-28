@@ -22,6 +22,7 @@ console.log("submitted form====>")
 axios.post('',{
 mobileNumber:mobileNumber,
 password:password})
+navigate("/teacher")
 .then((response)=>{
   console.log(response.data)
   props.userAuthentication()
@@ -33,12 +34,7 @@ password:password})
  
 })
 
-if (mobileNumber!==''&& password!=='') {
- 
-  navigate("/teacher");
-} else {
-  password('Enter valid password');
-}
+
  }
   
   return (
