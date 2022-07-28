@@ -1,15 +1,16 @@
 import { useState } from "react";
 import "../Forms/forms.css";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import image from "../../assets/logo/new_log.png";
 import axios from "axios";
 
- const Login=()=>{
- const [number,setNumber]=useState('')
+ const Login=(props)=>{
+  let navigate = useNavigate();
+ const [mobileNumber,setMobileNumber]=useState('')
  const [password,setPassword]=useState('')
- const handleNumber =(e)=>{
+ const handleMobileNumber =(e)=>{
   console.log(e.target.value)
-  setNumber(e.target.value)
+  setMobileNumber(e.target.value)
  }
  const handlePassword =(e)=>{
   setPassword(e.target.value)
@@ -19,17 +20,25 @@ import axios from "axios";
 e.preventDefault()
 console.log("submitted form====>")
 axios.post('',{
-number:number,
+mobileNumber:mobileNumber,
 password:password})
 .then((response)=>{
   console.log(response.data)
-  alert('successfully')
+  props.userAuthentication()
+   props.history.push('/')
 })
 .catch((err)=>{
   console.log(err)
   console.log(err.response)
-  alert('Enter the correct password')
+ 
 })
+
+if (mobileNumber!==''&& password!=='') {
+ 
+  navigate("/teacher");
+} else {
+  password('Enter valid password');
+}
  }
   
   return (
@@ -56,8 +65,8 @@ password:password})
              className="form-control"
              placeholder="Enter your Mobile Number"
               type='tel'
-              value={number}
-             onChange={handleNumber} required name='number'/>
+              value={mobileNumber}
+             onChange={handleMobileNumber} required name='Mobile Number'/>
             </div>
            
     
