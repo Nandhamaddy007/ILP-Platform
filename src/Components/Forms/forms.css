@@ -1,4 +1,6 @@
-
+.error{
+  color: red;
+}
 .class-container {
   width: 100%;
   min-height: 100vh;
@@ -21,7 +23,9 @@
   width: 100%;
   height: 100%;
   max-width: 825px;
-  vertical-align: middle;
+ 
+
+
 }
 .login-container {
   width: 100%;
@@ -67,17 +71,18 @@
   width: 400px;
 }
 
+
 .form-control{
   margin-left:3%;
-}
-.form-control{
   margin-top: 20px;
   border-radius: 6px;
   width:100%;
-  
+ padding:0.375rem 0.75rem; 
  
 }
+
 .submit__button {
+  margin-left: 2%;
   margin-top: 20px;
   width: 93%;
   padding: 0.5rem 7.75rem;
@@ -88,7 +93,7 @@
   background-color: #ffbc53;
   border: none;
   border-radius: 6px;
-   margin-left: 10px;
+ 
 
 }
 .submit__button:hover {
@@ -171,9 +176,8 @@
   margin-top: 40px;
   text-align: center;
 }
-/* button{
-  margin-left: 10px;
-} */
+
+
 
 @media (max-width: 995px) {
   .login-body {
@@ -183,7 +187,7 @@
   
   }
   .submit__button{
-    width:100%;
+    width:93%;
   }
 
   .login-wrapper {
@@ -200,15 +204,6 @@
     width: 100%;
     height: auto;
   }
-
-  .login__form {
-    max-width: revert;
-    padding: 1.5rem 2.5rem 2rem;
-    transition: transform 0.8s ease-in-out, opacity 0.45s linear;
-  }
-
-  
-
 .login-left {
     position: revert;
     height: auto;
@@ -244,12 +239,7 @@
     height: auto;
   }
 
-  .login__form {
-    max-width: revert;
-    padding: 1.5rem 2.5rem 2rem;
-    transition: transform 0.8s ease-in-out, opacity 0.45s linear;
-  }
-
+  
   
 
   .login-left {
@@ -334,7 +324,7 @@
     display: none;
   }
 }
-@media (max-width: 530px) {
+@media (max-width: 576px) {
   .class-container {
     padding: 1rem;
   }
@@ -351,7 +341,9 @@
     padding: 1.5rem 1rem;
     border-radius: 1.6rem;
   }
-
+.submit__button{
+  width:100%;
+}
   
 
   
@@ -377,6 +369,9 @@
   .login-left {
     padding: 1.25rem 0.75rem;
     border-radius: 2rem;
+  }
+  .submit__button{
+    margin-right: 6px;
   }
 
  
@@ -404,31 +399,27 @@
     padding: 1rem 0.5rem;
     border-radius: 2rem;
   }
+  
 
 }
 
 @media (max-width: 290px) {
   .login-body {
     height: auto;
-    max-width: 100px;
+    max-width: 100%;
     overflow: hidden;
+    vertical-align: middle;
+    border-radius: 2rem;
   }
   
   .class-container {
     padding: 0.5rem;
   }
+  .form-control{
+    width:100%;
+  }
   
-  .login-body {
-    border-radius: 2rem;
-  }
-  .class-container {
-    padding: 0.5rem;
-  }
-
-  .login-body {
-    border-radius: 2rem;
-  }
-
+ 
   .login-wrapper {
     padding: 0.5rem;
   }
@@ -439,3 +430,5 @@
   }
 
 }
+
+ 
