@@ -1,9 +1,434 @@
-.login{border-radius: 2px 2px 5px 5px;
-  padding: 10px 20px 20px 20px;
-  width: 90%;
-  max-width: 320px;
-  background: #ffffff;
-  position: relative;
-  padding-bottom: 80px;
-  box-shadow: 0px 1px 5px rgba(0,0,0,0.3);
+.error{
+  color: red;
 }
+.class-container {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+   padding: 2rem;
+  display: flex;
+  justify-content: center;
+  background-color: #eff8ff;
+
+}
+
+.login-body {
+  display: table;
+  height: 100vh;
+  min-height: 100vh;
+  width: 100%;
+}
+.login-wrapper {
+  display: table-cell;
+  width: 100%;
+  height: 100%;
+  max-width: 825px;
+ 
+
+
+}
+.login-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.login-box {
+  background-color: #fff;
+  border-radius: 6px;
+ box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+  display: flex;
+  margin: 1.875rem auto;
+  max-width: 800px;
+  min-height: 500px;
+  width: 100%;
+}
+.logo {
+  width: 25.5rem;
+  position: relative;
+  top: 3rem;
+  filter: drop-shadow(2px 4px 6px black);
+}
+
+.login-left {
+  align-items: center;
+  background: url("../../assets/images/India-child-labour-school-holiday-1.jpg");
+  background-color: #00000069;
+  border-radius: 6px 0 0 6px;
+  flex-direction: column;
+  background-size: cover;
+  background-position: -10rem;
+  justify-content: center;
+  padding: 80px;
+  width: 400px;
+  display: flex;
+  background-blend-mode: hue;
+}
+.login-right {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 80px;
+  width: 400px;
+}
+
+
+.form-control{
+  margin-left:3%;
+  margin-top: 20px;
+  border-radius: 6px;
+  width:100%;
+ padding:0.375rem 0.75rem; 
+ 
+}
+
+.submit__button {
+  margin-left: 2%;
+  margin-top: 20px;
+  width: 93%;
+  padding: 0.5rem 7.75rem;
+  font-weight: bold;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  background-color: #ffbc53;
+  border: none;
+  border-radius: 6px;
+ 
+
+}
+.submit__button:hover {
+  background-color: #11a7f3;
+}
+
+.submit__button:active {
+  transform: scale(0.98);
+}
+
+
+  
+.paragraph_title{
+  text-align: center;
+  color: #413a3a;
+  font-size: 20px;
+  font-weight: bold;
+  font-family:  sans-serif;
+  margin-top: 20px;
+}
+.login__title{
+  margin-bottom: 20px;
+  text-align: center;
+  color:rgb(2, 5, 14) ;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+}
+ input:hover {
+  border: 1px solid rgb(212, 136, 22);
+  overflow: hidden;        
+}
+
+
+.login-or {
+  color: #413a3a;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  position: relative;
+}
+.or-line {
+  background-color:rgb(172, 163, 163);
+  height: 1px;
+  margin-bottom: 0;
+  margin-top: 0;
+  display: block;
+}
+.span-or {
+  background-color: white;
+  display: block;
+  left: 50%;
+  margin-left: -20px;
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase;
+  top: 0;
+  width: 42px;
+}
+
+.new-registration{
+  text-align: left;
+  font-size: 15px;
+  color:rgb(5, 5, 17)
+}
+.new-account{
+  color: rgb(116, 112, 112);
+  font-weight: bold;
+}
+.paragraph{
+  margin-left: 80px;
+  margin-top: 20px;
+}
+.new-password{
+  color: rgb(116, 112, 112);
+  font-weight: bold;
+}
+.reg{
+  margin-top: 40px;
+  text-align: center;
+}
+
+
+
+@media (max-width: 995px) {
+  .login-body {
+    height: auto;
+    max-width: 475px;
+    overflow: hidden;
+  
+  }
+  .submit__button{
+    width:93%;
+  }
+
+  .login-wrapper {
+    position: static;
+    transform: none;
+    width: revert;
+    height: revert;
+    padding: 2rem;
+  }
+ 
+
+  .login-box {
+    position: revert;
+    width: 100%;
+    height: auto;
+  }
+.login-left {
+    position: revert;
+    height: auto;
+    width: 100%;
+    padding: 3rem 2rem;
+    display: flex;
+  }
+
+  .login-left {
+    display: none;
+  }
+}
+@media (max-width: 825px) {
+  .login-body {
+    height: auto;
+    max-width: 475px;
+    overflow: hidden;
+  
+  }
+
+  .login-wrapper {
+    position: static;
+    transform: none;
+    width: revert;
+    height: revert;
+    padding: 2rem;
+  }
+  
+
+  .login-box {
+    position: revert;
+    width: 100%;
+    height: auto;
+  }
+
+  
+  
+
+  .login-left {
+    position: revert;
+    height: auto;
+    width: 100%;
+    padding: 3rem 2rem;
+    display: flex;
+  }
+
+  .login-left {
+    display: none;
+  }
+}
+@media (max-width: 775px) {
+  .login-body {
+    height: auto;
+    max-width: 450px;
+    overflow: hidden;
+  }
+
+  .login-wrapper {
+    position: static;
+    transform: none;
+    width: revert;
+    height: revert;
+    padding: 1.5rem;
+  }
+  
+
+  .login-box {
+    position: revert;
+    width: 100%;
+    height: auto;
+  }
+
+.login-left {
+    position: revert;
+    height: auto;
+    width: 100%;
+    padding: 3rem 2rem;
+    display: flex;
+  }
+
+  .login-left {
+    display: none;
+  }
+}
+@media (max-width: 650px) {
+  .login-body {
+    height: auto;
+    max-width: 550px;
+    overflow: hidden;
+  }
+
+  .login-wrapper {
+    position: static;
+    transform: none;
+    width: revert;
+    height: revert;
+    padding: 2rem;
+  }
+  
+
+  .login-box {
+    position: revert;
+    width: 100%;
+    height: auto;
+  }
+
+ 
+
+  .login-left {
+    position: revert;
+    height: auto;
+    width: 100%;
+    padding: 3rem 2rem;
+    display: flex;
+  }
+
+  .login-left {
+    display: none;
+  }
+}
+@media (max-width: 576px) {
+  .class-container {
+    padding: 1rem;
+  }
+  
+  .login-body {
+    border-radius: 2rem;
+  }
+
+  .login-wrapper {
+    padding: 1rem;
+  }
+
+  .login-left {
+    padding: 1.5rem 1rem;
+    border-radius: 1.6rem;
+  }
+.submit__button{
+  width:100%;
+}
+  
+
+  
+}
+@media (max-width: 410px) {
+  .login-body {
+    height: auto;
+    max-width: 425px;
+    overflow: hidden;
+  }
+  .class-container {
+    padding: 0.75rem;
+  }
+  
+  .login-body {
+    border-radius: 1.5rem;
+  }
+
+  .login-wrapper {
+    padding: 0.75rem;
+  }
+
+  .login-left {
+    padding: 1.25rem 0.75rem;
+    border-radius: 2rem;
+  }
+  .submit__button{
+    margin-right: 6px;
+  }
+
+ 
+}
+@media (max-width: 330px) {
+  .login-body {
+    height: auto;
+    max-width: 200px;
+    overflow: hidden;
+  }
+
+  .class-container {
+    padding: 0.5rem;
+  }
+ 
+  .login-body {
+    border-radius: 2rem;
+  }
+
+  .login-wrapper {
+    padding: 0.5rem;
+  }
+
+  .login-left {
+    padding: 1rem 0.5rem;
+    border-radius: 2rem;
+  }
+  
+
+}
+
+@media (max-width: 290px) {
+  .login-body {
+    height: auto;
+    max-width: 100%;
+    overflow: hidden;
+    vertical-align: middle;
+    border-radius: 2rem;
+  }
+  
+  .class-container {
+    padding: 0.5rem;
+  }
+  .form-control{
+    width:100%;
+  }
+  
+ 
+  .login-wrapper {
+    padding: 0.5rem;
+  }
+
+  .login-left {
+    padding: 1rem 0.5rem;
+    border-radius: 2rem;
+  }
+
+}
+
+ 
