@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 export default function Groups(props){
   let sample={
-    Class10:{Doctors:"20",Engineers:"7",Lawyers:"14"},
-    Class11:{Doctors:"10",Engineers:"17",Lawyers:"4"},
-    Class12:{Doctors:"5",Engineers:"8",Lawyers:"24"}
+    Class10:{Doctor:"20",Engineer:"7",Lawyer:"14"},
+    Class11:{Doctor:"10",Engineer:"17",Lawyer:"4"},
+    Class12:{Doctor:"5",Engineer:"8",Lawyer:"24"}
   }
     return(
         <>
