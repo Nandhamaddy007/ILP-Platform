@@ -61,7 +61,7 @@ data-bs-backdrop="static" data-bs-keyboard="false"
             </div> */}
             <div className="col"><label>{props.data.sTask}</label></div>
         </div>
-        {props.data.pTask.length>1 && <div className="row mt-3">
+        {props.data.pTask?.length>1 && <div className="row mt-3">
             <div className="col"><label htmlFor="">Comments: </label></div>
             <div className="col"><textarea id="comments"></textarea></div>
             
