@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom'
 import { useEffect, useState } from "react";
 import EditStudent from "../Forms/EditStudent";
 import './dashboard.css'
+import { Button } from "@mui/material";
+
 export default function FilterScreen(props){
   let data=useParams()
   const [filters,setFilters] =useState({class:"",type:""})
@@ -110,8 +112,8 @@ setEditData({
             </div>
             </div>
             <div className="mt-5 scroller">
-                <table className="table table-striped table-hover" >
-                    <thead className="table-secondary">
+                <table className="table table-hover" >
+                    <thead style={{background:"#42a5f5", color:"white"}}>
                     <tr>
                         <th scope="col">Name</th>
                         <th scope="col">Class</th>
@@ -132,11 +134,19 @@ setEditData({
                            <td>{data["pTask"]}</td>
                            <td>{data["sTask"]}</td>
                            <td>{data["status"]}</td>
-                           <td><div className="btn btn-dark" 
+                           <td>
+                           <Button variant="contained" style={{background:"#42a5f5"}}
+                           className="form__button _btn"
+                            onClick={()=>setEdit(data)}
+                            data-bs-toggle="modal" 
+                            data-bs-target="#staticstudentData"
+                           >Edit <i class="bi bi-pencil-square"></i></Button>
+                            {/* <div className="btn btn-dark" 
                            onClick={()=>setEdit(data)}
                            data-bs-toggle="modal" 
-                           data-bs-target="#staticstudentData">Edit 
-                           <i class="bi bi-pencil-square"></i></div></td>
+                           data-bs-target="#staticstudentData"> 
+                           </div> */}
+                           </td>
                            </tr> </>)
                     })}
                     </tbody>
