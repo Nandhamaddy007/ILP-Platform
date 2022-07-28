@@ -14,17 +14,19 @@ import Login from "./Components/Forms/Login";
 import Navbar from "./Components/Navbar";
 import Register from "./Components/Forms/Register";
 import ResetPassword from "./Components/Forms/ResetPassword";
+import WelcomePage from "./Components/Dashboards/welcomepage";
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        <Navbar />
+        {/* <Navbar /> */}
+
         <Routes>
           <Route path="/" element={<DashboardLayout />}>
             <Route index element={<PublicDashboard />} />
             <Route path="student" element={<StudentsdDashboard />} />
-            <Route path="teacher" element={<TeacherDashboard />} />
+            <Route path="/teacher" element={<TeacherDashboard />} />
             <Route path="block" element={<BlockHeadDashboard />} />
             <Route path="district" element={<DistricteadDashboard />} />
             <Route path="state" element={<StateHeadDashboard />} />
@@ -33,6 +35,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/resetPassword" element={<ResetPassword />} />
+            <Route path="/welcomepage" element={<WelcomePage />} />
           </Route>
         </Routes>
       </BrowserRouter>

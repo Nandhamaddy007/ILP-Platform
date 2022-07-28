@@ -6,6 +6,7 @@ import image from "../../assets/logo/new_log.png";
 import Popover from "@mui/material/Popover";
 import Typography from "@mui/material/Typography";
 import axios from "axios";
+import Navbar from "../Navbar";
 const ResetPassword = () => {
   const [show, setShow] = useState(false);
   const ShowHide = (ev) => {
@@ -15,6 +16,7 @@ const ResetPassword = () => {
 
   return (
     <>
+      <Navbar />
       <main className="main-container">
         <div className="register-body">
           <div className="register-wrapper">

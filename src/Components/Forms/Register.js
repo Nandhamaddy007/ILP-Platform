@@ -6,6 +6,7 @@ import image from "../../assets/logo/new_log.png";
 import Popover from "@mui/material/Popover";
 import Typography from "@mui/material/Typography";
 import axios from "axios";
+import Navbar from "../Navbar";
 const Register = () => {
   const [show, setShow] = useState(false);
   const ShowHide = (ev) => {
@@ -15,6 +16,7 @@ const Register = () => {
 
   return (
     <>
+      <Navbar />
       <main className="main-container">
         <div className="register-body">
           <div className="register-wrapper">
@@ -161,14 +163,15 @@ export const HiddenSecond = () => {
     const valid = validate(formValues);
     if (!valid.confirmPassword && !valid.password && !valid.otp) {
       postData();
+      console.log("final......" + JSON.stringify(formValues));
       navigate("/login");
     } else {
       setFormErrors(valid);
     }
   };
-  const postData = (ev) => {
+  const postData = () => {
     const inputData = formValues;
-    console.log("post data" + inputData);
+    console.log("post data" + JSON.stringify(inputData));
     axios.post("", inputData).then((response) => {
       console.log(response);
     });
@@ -235,7 +238,7 @@ export const HiddenSecond = () => {
             variant="contained"
             onClick={handleClick}
           />{" "}
-          <p className="error">{formErrors?.password}</p>
+          <p className="error">{formErrors.password}</p>
         </div>
 
         <div className="form__input--group">
@@ -248,7 +251,7 @@ export const HiddenSecond = () => {
             value={formValues.confirmPassword}
             onChange={handleChange}
           />{" "}
-          <p className="error">{formErrors?.confirmPassword}</p>
+          <p className="error">{formErrors.confirmPassword}</p>
           <Popover
             id={id}
             open={open}
