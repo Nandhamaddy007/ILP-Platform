@@ -33,10 +33,10 @@ export default function FilterScreen(props){
                 id="class"
                 value={filters.class}
               >
-                <option>Class9</option>
-                <option>Class10</option>
-                <option>Class11</option>
-                <option>Class12</option>
+                <option>9th grade</option>
+                <option>10th grade</option>
+                <option>11th grade</option>
+                <option>12th grade</option>
               </select>
             </div>
             <div className="col">
