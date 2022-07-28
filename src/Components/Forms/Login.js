@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "../Forms/forms.css";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import image from "../../assets/logo/new_log.png";
 import axios from "axios";
 import Navbar from "../Navbar";
