@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Tinos&display=swap');
 
 *,
 *::before,
@@ -6,7 +6,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+ font-family: 'Tinos', serif;
 }
 
 .welcomepage-home {
@@ -17,14 +17,17 @@
     justify-content: center;
     margin-top: 1.2rem;
 }
-.section-wrap{
+
+.section-wrap {
     padding: 64px 0 0 0;
-  
-   
+
+
 }
-.Hiddeen-section-wrap{
+
+.Hiddeen-section-wrap {
     padding: 1rem;
 }
+
 .welcome-page-header {
     width: fit-content;
     position: relative;
@@ -49,13 +52,15 @@
     margin-bottom: 3rem;
 
 }
-.hidden-section-row{
- display: flex;
+
+.hidden-section-row {
+    display: flex;
     flex-wrap: wrap;
     margin-top: -1.5rem;
     margin-right: -0.75rem;
-    margin-left: -0.75rem;     
+    margin-left: -0.75rem;
 }
+
 .chart {
 
     margin-bottom: 3rem;
@@ -105,7 +110,7 @@
 .card-body {
     padding: 1.5rem;
     cursor: pointer;
-  
+
 }
 
 .card-body:hover {
@@ -113,7 +118,7 @@
     padding: 1.5rem;
     backdrop-filter: brightness(1.25);
     backdrop-filter: saturate(1.5);
-    box-shadow:   1px 1px 8px 2px rgb(209, 202, 202);
+    box-shadow: 1px 1px 8px 2px rgb(209, 202, 202);
     opacity: 1;
     zoom: .95;
 
@@ -129,16 +134,17 @@
     color: #fff;
     margin-right: 20px;
 }
-.career-icon-wrap{
 
-    background-color: RGBA(25,135,84,var(--bs-bg-opacity,1));
+.career-icon-wrap {
+
+    background-color: RGBA(25, 135, 84, var(--bs-bg-opacity, 1));
     width: 60px;
     height: 60px;
     padding: 13px 21px;
     border-radius: 10px;
     color: #fff;
     margin-right: 20px;
-justify-content: center;
+    justify-content: center;
 }
 
 .card-body-content {
@@ -237,4 +243,74 @@ justify-content: center;
 
 .bottom {
     margin-bottom: -6rem;
+}
+
+.Profession-card-wrap {
+    margin: 1rem .75rem;
+    width: 15rem;
+
+}
+
+.Profession-bg-one {
+  background-color: #48ffec63;
+    border-color: #48ffec;
+    border-radius: 10px;
+}
+
+.Profession-card {
+    border: 1px solid #48ffec;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 3%);
+    margin-bottom: 1.875rem;
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    /* background-color: #fff; */
+
+
+}
+
+.Profession-card-body {
+       padding: .5rem;
+    cursor: pointer;
+  
+backdrop-filter: brightness(1.25);
+    backdrop-filter: saturate(1.5);
+   
+border-radius: 10px;
+}
+
+.Profession-card-body:hover {
+  box-shadow: 1px 1px 8px 2px rgb(209, 202, 202);
+border: 1px solid #00ffe5;
+zoom: .95;
+}
+
+.Profession-card-body-content {
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Profession-career-icon-wrap {
+
+  
+    background-color: #1cacbf;
+    width: 50px;
+    /* height: 45px; */
+    padding: 13px 15px;
+    border-radius: 20px 0;
+    color: #fff;
+    margin-right: 20px;
+    justify-content: center;
+}
+
+.Profession-db-info h3 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #295263;
 }

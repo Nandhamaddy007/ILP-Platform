@@ -190,6 +190,17 @@
 .form__rest__button:hover {
   background-color: #11a7f3;
 }
+.logoNav{
+     width: 15.5rem;
+    position: relative;
+    filter: drop-shadow(2px 2px 1px #0d3a5f);
+}
+.logoNavigation{
+     width: 10.5rem;
+    position: relative;
+    filter: drop-shadow(2px 2px 1px #0d3a5f);
+}
+
 @media (max-width: 995px) {
   .register-body {
     height: auto;
@@ -197,7 +208,16 @@
     overflow: hidden;
 
   }
-
+  .me-2{
+  position: relative;
+    bottom: 2.9rem;
+}
+.logoNav{
+     width: 15.5rem;
+    position: relative;
+        bottom: 2.9rem;
+    filter: drop-shadow(2px 2px 1px #0d3a5f);
+}
   .register-wrapper {
     position: static;
     transform: none;
@@ -449,7 +469,12 @@
  
   }
 }
+@media (max-width: 370px) {
+   .me-2{
+display: none;
+}}
 @media (max-width: 330px) {
+
   .register-body {
     height: auto;
     max-width: 200px;

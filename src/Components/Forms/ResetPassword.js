@@ -28,7 +28,7 @@ const ResetPassword = () => {
                 <div className="register-right">
                   <div className="register-right-wrap">
                     <h1 className="form__title">Reset Password</h1>
-                    <p className="account-subtitle">Choose your Career</p>
+                    <p className="account-subtitle">Way to success</p>
 
                     {!show && <HiddenFirst show={ShowHide} />}
                     {show && <HiddenSecond />}
