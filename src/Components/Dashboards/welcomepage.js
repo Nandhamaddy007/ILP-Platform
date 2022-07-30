@@ -108,7 +108,7 @@ export const HiddenComponent = (props) => {
   
   return (
     <>
-      <section className="Hidden-section-wrap">
+      <section className="Hidden-section-wrap animate__animated animate__fadeInDown animate__fast">
         <div className="hidden-section-row">
           {Object.keys(props.data).map((data, ind) => {
             return (

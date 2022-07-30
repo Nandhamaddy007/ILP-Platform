@@ -1,5 +1,7 @@
+import { useState } from "react";
+
 export default function GradeRender(props){
-    console.log(props.index);
+    const [showActive,setShowActive]= useState()
     return (
       <>
         <div
@@ -7,11 +9,12 @@ export default function GradeRender(props){
           onClick={() => {
             props.hide(props.index);
             props.show(props.index);
+            setShowActive(props.index)
           }}
         >
           <div className={props.data.background + " card"}>
             <div className="card-body">
-              <div className="card-body-content">
+              <div className="card-body-content ">
                 <div className="db-icon">
                   <svg
                     aria-hidden="true"

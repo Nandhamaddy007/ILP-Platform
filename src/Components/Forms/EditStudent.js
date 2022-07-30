@@ -32,7 +32,7 @@ data-bs-backdrop="static" data-bs-keyboard="false"
             
         </div>
         <div className="row mt-3">
-            <div className="col"><label>Primary Task:</label></div>
+            <div className="col"><label>Primary Career:</label></div>
             <div className="col">  <select 
             className="form-control" 
             name="type" 
@@ -44,7 +44,7 @@ data-bs-backdrop="static" data-bs-keyboard="false"
               })
             }}
             value={obj.pTask}>
-                <option></option>
+                <option ></option>
                 <option>Doctor</option>
                     <option>Engineer</option>
                     <option>Lawyer</option>
@@ -60,7 +60,7 @@ data-bs-backdrop="static" data-bs-keyboard="false"
             </div>     
         </div>
         <div className="row mt-3">
-            <div className="col"><label>Secondary Task:</label></div>
+            <div className="col"><label>Secondary Career:</label></div>
             <div className="col"> <select className="form-control" 
             name="type"  
             id="type" 
@@ -71,7 +71,7 @@ data-bs-backdrop="static" data-bs-keyboard="false"
               })
             }}
             value={obj.sTask}>
-                <option></option>
+                <option ></option>
                     <option>Doctor</option>
                     <option>Engineer</option>
                     <option>Lawyer</option>
@@ -86,7 +86,7 @@ data-bs-backdrop="static" data-bs-keyboard="false"
             </div>
             {/* <div className="col"><label>{props.data.sTask}</label></div> */}
         </div>
-        {props.data.pTask?.length>1 && <div className="row mt-3">
+        {props.data.pTask!="NA" && <div className="row mt-3">
             <div className="col"><label htmlFor="">Comments: </label></div>
             <div className="col"><textarea id="comments"></textarea></div>
             

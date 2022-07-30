@@ -29,8 +29,8 @@ export default function FilterScreen(props) {
     {
       name: "jill",
       class: "9th Grade",
-      pTask: "",
-      sTask: "",
+      pTask: "NA",
+      sTask: "NA",
       status: "yet to assign",
     },
 
@@ -107,16 +107,16 @@ export default function FilterScreen(props) {
     if (Object.keys(data).length > 0) setTable(data);
   }, []);
   const setTable = (val) => {
-    if (val["class"] == "" && val["type"] == "") {
+    if (val["class"] == "All Classes" && val["type"] == "All Career") {
       setStudentData([...temp]);
     } else
       setStudentData(
         temp.filter((data, ind) => {
-          if (val["class"] == "") {
+          if (val["class"] == "All Classes") {
             if (data["pTask"] === val["type"]) {
               return data;
             }
-          } else if (val["type"] == "") {
+          } else if (val["type"] == "All Career") {
             if (data["class"] === val["class"]) {
               return data;
             }
@@ -174,7 +174,7 @@ export default function FilterScreen(props) {
                   id="class"
                   value={filters.class}
                 >
-                  <option></option>
+                  <option>All Classes</option>
                   <option>9th Grade</option>
                   <option>10th Grade</option>
                   <option>11th Grade</option>
@@ -182,7 +182,7 @@ export default function FilterScreen(props) {
                 </select>
               </div>
               <div className="col">
-                <label htmlFor="type">Primary Task :</label>
+                <label htmlFor="type">Primary Career :</label>
                 <select
                   className="form-control"
                   name="type"
@@ -190,7 +190,8 @@ export default function FilterScreen(props) {
                   id="type"
                   value={filters.type}
                 >
-                  <option></option>
+                  <option>All Career</option>
+                  <option>NA</option>
                   <option>Doctor</option>
                     <option>Engineer</option>
                     <option>Lawyer</option>
@@ -210,8 +211,8 @@ export default function FilterScreen(props) {
                   <tr>
                     <th scope="col">Name</th>
                     <th scope="col">Class</th>
-                    <th scope="col">Primary Task</th>
-                    <th scope="col">Secondary Task</th>
+                    <th scope="col">Primary Career</th>
+                    <th scope="col">Secondary Career</th>
                     <th scope="col">Status</th>
                     <th scope="col">Action</th>
                   </tr>

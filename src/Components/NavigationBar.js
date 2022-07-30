@@ -319,7 +319,7 @@ export default function NavigationBar() {
             <MenuOpenSharpIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Career Tracking
+            Career Guidance
           </Typography>
           {/* <Search>
             <SearchIconWrapper>
