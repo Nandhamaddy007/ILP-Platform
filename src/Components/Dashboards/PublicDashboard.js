@@ -1,5 +1,7 @@
 import './dashboard.css'
 import Navbar from "../Navbar";
+import Button from "@mui/material/Button";
+import Stack from "@mui/material/Stack";
 export default function PublicDashboard(props) {
   let img =
     "https://i0.wp.com/www.giveindia.org/blog/wp-content/uploads/2019/04/10-NGOs-rejuvenating-education-in-India-banner.jpg?fit=1200%2C675&ssl=1";
@@ -9,7 +11,9 @@ export default function PublicDashboard(props) {
       <h1 className="animate__animated animate__fadeInDown text-overlay">
         Welcome to students career management portal
       </h1>
+
       <header className="overlay">
+        {" "}
         <div>
           {" "}
           <img
@@ -22,6 +26,27 @@ export default function PublicDashboard(props) {
       </header>
       <div className="animate__animated animate__fadeInDown container">
         <div className="row p-2">
+          {" "}
+          <div className="dash_btn">
+            <Stack direction="row" spacing={1}>
+              <Button
+                href="/login"
+                sx={{
+                  color: "#0f5132",
+                }}
+              >
+                Login
+              </Button>
+              <Button
+                href="/register"
+                sx={{
+                  color: "#0f5132",
+                }}
+              >
+                Register
+              </Button>
+            </Stack>
+          </div>
           <div className="offset-md-2 col-md-3">
             <div class="alert alert-success" role="alert">
               Over 40 districts
@@ -49,3 +74,5 @@ export default function PublicDashboard(props) {
     </>
   );
 }
+
+   

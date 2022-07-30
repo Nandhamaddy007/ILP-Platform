@@ -1,42 +1,56 @@
 import { useState } from "react";
 import "../Forms/forms.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import image from "../../assets/logo/new_log.png";
-import axios from "axios";
 import Navbar from "../Navbar";
-
 const Login = () => {
+  let navigate = useNavigate();
   const [number, setNumber] = useState("");
   const [password, setPassword] = useState("");
-  const handleNumber = (e) => {
-    console.log(e.target.value);
-    setNumber(e.target.value);
-  };
-  const handlePassword = (e) => {
-    setPassword(e.target.value);
-  };
+  const [numberErr, setNumberErr] = useState({});
+  const [passwordErr, setPasswordErr] = useState({});
 
-  const handleSubmit = (e) => {
+  const onSubmit = (e) => {
     e.preventDefault();
-    console.log("submitted form====>");
-    axios
-      .post("", {
-        number: number,
-        password: password,
-      })
-      .then((response) => {
-        console.log(response.data);
-        alert("successfully");
-      })
-      .catch((err) => {
-        console.log(err);
-        console.log(err.response);
-        alert("Enter the correct password");
-      });
+    const isValid = formValidation();
+    if (isValid) {
+      navigate("/welcomepage");
+      setNumber("");
+      setPassword("");
+    }
+  };
+  const formValidation = () => {
+    var numberErr = {};
+    var passwordErr = {};
+    let isValid = true;
+
+    if (number.trim().length > 10) {
+      numberErr.numberShort = "Invalid Number !";
+      isValid = false;
+    }
+    if (number.trim().length < 10) {
+      numberErr.numberShort = "Invalid Number !";
+
+      isValid = false;
+    }
+    if (password.trim().length > 10) {
+      passwordErr.passwordShort = "Enter correct password !";
+      isValid = false;
+    }
+
+    if (password.trim().length < 6) {
+      passwordErr.passwordShort = "should be 6 character !";
+      isValid = false;
+    }
+
+    setNumberErr(numberErr);
+    setPasswordErr(passwordErr);
+    return isValid;
   };
 
   return (
     <>
+      {" "}
       <Navbar />
       <main className="class-container">
         <div className="login-body">
@@ -52,18 +66,25 @@ const Login = () => {
 
                     <div className="divider"></div>
 
-                    <form onSubmit={handleSubmit}>
+                    <form onSubmit={onSubmit}>
                       <div className="formGroup col-sm-11 col-md-11">
                         <input
                           className="form-control"
                           placeholder="Enter your Mobile Number"
                           type="tel"
                           value={number}
-                          onChange={handleNumber}
-                          required
-                          name="number"
+                          onChange={(e) => {
+                            setNumber(e.target.value);
+                          }}
                         />
                       </div>
+                      {Object.keys(numberErr).map((key) => {
+                        return (
+                          <div style={{ color: "red", marginLeft: "10%" }}>
+                            {numberErr[key]}
+                          </div>
+                        );
+                      })}
 
                       <div className="formGroup col-sm-11 col-md-11 ">
                         <input
@@ -71,19 +92,25 @@ const Login = () => {
                           placeholder="Enter your password"
                           type="password"
                           value={password}
-                          onChange={handlePassword}
-                          required
-                          name="password"
+                          onChange={(e) => {
+                            setPassword(e.target.value);
+                          }}
                         />
                       </div>
+                      {Object.keys(passwordErr).map((key) => {
+                        return (
+                          <div style={{ color: "red", marginLeft: "10%" }}>
+                            {passwordErr[key]}
+                          </div>
+                        );
+                      })}
 
                       <div className="formGroup">
                         <div className="row">
                           <div className="col">
                             <button
                               type="submit"
-                              value="login"
-                              className="submit__button"
+                              className="submit__button _btn"
                             >
                               Login
                             </button>

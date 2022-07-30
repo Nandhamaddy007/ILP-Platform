@@ -30,7 +30,7 @@ const Register = () => {
                     <h1 className="form__title">Register</h1>
 
                     <div class="divider"></div>
-                    <p className="account-subtitle">Choose your Career</p>
+                    <p className="account-subtitle">Way to success</p>
 
                     {!show && <HiddenFirst show={ShowHide} />}
                     {show && <HiddenSecond />}
@@ -118,7 +118,7 @@ export const HiddenFirst = ({ show }) => {
             name="userName"
             id="signup__form__input--userName"
             className="form__input"
-            placeholder="Enter your Name"
+            placeholder="Enter your Teacher Id"
             value={formValues.userName}
             onChange={handleChange}
           />
