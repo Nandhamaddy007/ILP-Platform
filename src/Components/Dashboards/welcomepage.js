@@ -41,12 +41,19 @@ const WelcomePage = () => {
   const [show, setShow] = useState({ index: null });
   const showHidden = (i) => {
     console.log(i);
-    setShowComponent(!showComponent);
+
     setShow({
       index: i,
     });
   };
 
+  const hidden = (i) => {
+    if (i !== show.index) {
+      setShowComponent(true);
+    } else {
+      setShowComponent(false);
+    }
+  };
   return (
     <div className="welcomepage-home">
       <>
@@ -57,7 +64,12 @@ const WelcomePage = () => {
             {renderData.map((data, ind) => {
               return (
                 <>
-                  <GradeRender data={data} index={ind} hide={showHidden} />
+                  <GradeRender
+                    data={data}
+                    index={ind}
+                    hide={showHidden}
+                    show={hidden}
+                  />
                 </>
               );
             })}
@@ -174,7 +186,13 @@ const GradeRender = (props) => {
   console.log(props.index);
   return (
     <>
-      <div className="card-wrap" onClick={() => props.hide(props.index)}>
+      <div
+        className="card-wrap"
+        onClick={() => {
+          props.hide(props.index);
+          props.show(props.index);
+        }}
+      >
         <div className={props.data.background + " card"}>
           <div className="card-body">
             <div className="card-body-content">
