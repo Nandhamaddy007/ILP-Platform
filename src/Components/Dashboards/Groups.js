@@ -3,23 +3,24 @@ import VaccinesSharpIcon from "@mui/icons-material/VaccinesSharp";
 import GavelIcon from "@mui/icons-material/Gavel";
 import EngineeringIcon from "@mui/icons-material/Engineering";
 export default function Groups(props) {
+  console.log(props)
   let sample = {
-    Class9: {
+    "9th Grade": {
       Doctor: <VaccinesSharpIcon />,
       Engineer: <EngineeringIcon />,
       Lawyer: <GavelIcon />,
     },
-    Class10: {
+    "10th Grade": {
       Doctor: <VaccinesSharpIcon />,
       Engineer: <EngineeringIcon />,
       Lawyer: <GavelIcon />,
     },
-    Class11: {
+    "11th Grade": {
       Doctor: <VaccinesSharpIcon />,
       Engineer: <EngineeringIcon />,
       Lawyer: <GavelIcon />,
     },
-    Class12: {
+    "12th Grade": {
       Doctor: <VaccinesSharpIcon />,
       Engineer: <EngineeringIcon />,
       Lawyer: <GavelIcon />,
@@ -27,16 +28,16 @@ export default function Groups(props) {
   };
   return (
     <>
-      <section className="section-wrap">
+      <section className="section-wrap ">
         <div className="section-row" id="classAccordion">
           {Object.keys(sample).map((val, index) => {
             return (
               <div className="card-wrap" id={val + "heading"}>
-                <div className="bg-one card">
+                <div className={props.data[index].background}>
                   <div
                     className="card-body "
                     data-bs-toggle="collapse"
-                    data-bs-target={"#" + val}
+                    data-bs-target={"#class" + val.split(" ")[0]}
                     aria-expanded="false"
                   >
                     <div className="card-body-content ">
@@ -65,13 +66,13 @@ export default function Groups(props) {
                   </div>
                 </div>
                 <div
-                  id={val}
+                  id={"class"+val.split(" ")[0]}
                   className="accordion-collapse collapse"
                   aria-labelledby={val + "heading"}
                   data-bs-parent="#classAccordion"
                 >
                   <div>
-                    <ol className="d-flex flex-column">
+                    <div className="d-flex flex-column">
                       {Object.keys(sample[val]).map((text, i) => {
                         return (
                           <>
@@ -101,7 +102,7 @@ export default function Groups(props) {
                           </>
                         );
                       })}
-                    </ol>
+                    </div>
                   </div>
                 </div>
               </div>

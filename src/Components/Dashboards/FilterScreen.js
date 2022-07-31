@@ -15,87 +15,87 @@ export default function FilterScreen(props) {
     {
       name: "johm",
       class: "9th Grade",
-      pTask: "doctor",
-      sTask: "engineer",
+      pTask: "Doctor",
+      sTask: "Engineer",
       status: "inProgress",
     },
     {
       name: "jack",
       class: "9th Grade",
-      pTask: "lawyer",
-      sTask: "pilot",
+      pTask: "Lawyer",
+      sTask: "Pilot",
       status: "inProgress",
     },
     {
       name: "jill",
       class: "9th Grade",
-      pTask: "",
-      sTask: "",
+      pTask: "NA",
+      sTask: "NA",
       status: "yet to assign",
     },
 
     {
       name: "johm",
       class: "10th Grade",
-      pTask: "doctor",
-      sTask: "engineer",
+      pTask: "Doctor",
+      sTask: "Engineer",
       status: "inProgress",
     },
     {
       name: "jack",
       class: "10th Grade",
-      pTask: "lawyer",
-      sTask: "pilot",
+      pTask: "Lawyer",
+      sTask: "Pilot",
       status: "inProgress",
     },
     {
       name: "jill",
       class: "10th Grade",
-      pTask: "scientist",
-      sTask: "politician",
+      pTask: "Scientist",
+      sTask: "Politician",
       status: "inProgress",
     },
 
     {
       name: "nancy",
       class: "11th Grade",
-      pTask: "police",
-      sTask: "pilot",
+      pTask: "Police",
+      sTask: "Pilot",
       status: "inProgress",
     },
     {
       name: "mani",
       class: "11th Grade",
-      pTask: "engineer",
-      sTask: "pilot",
+      pTask: "Engineer",
+      sTask: "Pilot",
       status: "inProgress",
     },
     {
       name: "arun",
       class: "11th Grade",
-      pTask: "chef",
-      sTask: "business",
+      pTask: "Chef",
+      sTask: "Business",
       status: "inProgress",
     },
 
     {
       name: "jude",
       class: "12th Grade",
-      pTask: "engineer",
+      pTask: "Engineer",
       sTask: "Pilot",
       status: "completed",
     },
     {
       name: "peter",
       class: "12th Grade",
-      pTask: "farmer",
+      pTask: "Farmer",
       sTask: "Pilot",
       status: "inProgress",
     },
     {
       name: "hari",
       class: "12th Grade",
-      pTask: "lawyer",
+      pTask: "Lawyer",
       sTask: "Pilot",
       status: "inProgress",
     },
@@ -107,16 +107,16 @@ export default function FilterScreen(props) {
     if (Object.keys(data).length > 0) setTable(data);
   }, []);
   const setTable = (val) => {
-    if (val["class"] == "" && val["type"] == "") {
+    if (val["class"] == "All Classes" && val["type"] == "All Career") {
       setStudentData([...temp]);
     } else
       setStudentData(
         temp.filter((data, ind) => {
-          if (val["class"] == "") {
+          if (val["class"] == "All Classes") {
             if (data["pTask"] === val["type"]) {
               return data;
             }
-          } else if (val["type"] == "") {
+          } else if (val["type"] == "All Career") {
             if (data["class"] === val["class"]) {
               return data;
             }
@@ -174,7 +174,7 @@ export default function FilterScreen(props) {
                   id="class"
                   value={filters.class}
                 >
-                  <option></option>
+                  <option>All Classes</option>
                   <option>9th Grade</option>
                   <option>10th Grade</option>
                   <option>11th Grade</option>
@@ -182,7 +182,7 @@ export default function FilterScreen(props) {
                 </select>
               </div>
               <div className="col">
-                <label htmlFor="type">Ambition :</label>
+                <label htmlFor="type">Primary Career :</label>
                 <select
                   className="form-control"
                   name="type"
@@ -190,14 +190,18 @@ export default function FilterScreen(props) {
                   id="type"
                   value={filters.type}
                 >
-                  <option></option>
+                  <option>All Career</option>
+                  <option>NA</option>
                   <option>Doctor</option>
-                  <option>Engineer</option>
-                  <option>Lawyer</option>
-                  <option>Scientist</option>
-                  <option>Police</option>
-                  <option>Chef</option>
-                  <option>Farmer</option>
+                    <option>Engineer</option>
+                    <option>Lawyer</option>
+                    <option>Scientist</option>
+                    <option>Police</option>
+                    <option>Chef</option>
+                    <option>Farmer</option>
+                    <option>Pilot</option>
+                    <option>Politician</option>
+                    <option>Business</option>
                 </select>
               </div>
             </div>
@@ -207,8 +211,8 @@ export default function FilterScreen(props) {
                   <tr>
                     <th scope="col">Name</th>
                     <th scope="col">Class</th>
-                    <th scope="col">Primary Task</th>
-                    <th scope="col">Secondary Task</th>
+                    <th scope="col">Primary Career</th>
+                    <th scope="col">Secondary Career</th>
                     <th scope="col">Status</th>
                     <th scope="col">Action</th>
                   </tr>
@@ -234,21 +238,7 @@ export default function FilterScreen(props) {
                             >
                               <EditIcon />
                             </IconButton>
-                            {/* <Button
-                              variant="contained"
-                              style={{ background: "#42a5f5" }}
-                              className="form__button _btn"
-                              onClick={() => setEdit(data)}
-                              data-bs-toggle="modal"
-                              data-bs-target="#staticstudentData"
-                            >
-                              Edit <i class="bi bi-pencil-square"></i>
-                            </Button> */}
-                            {/* <div className="btn btn-dark" 
-                           onClick={()=>setEdit(data)}
-                           data-bs-toggle="modal" 
-                           data-bs-target="#staticstudentData"> 
-                           </div> */}
+                           
                           </td>
                         </tr>{" "}
                       </>

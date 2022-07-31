@@ -319,9 +319,9 @@ export default function NavigationBar() {
             <MenuOpenSharpIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Career Tracking
+            Career Guidance
           </Typography>
-          <Search>
+          {/* <Search>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
@@ -329,7 +329,7 @@ export default function NavigationBar() {
               placeholder="Search…"
               inputProps={{ "aria-label": "search" }}
             />
-          </Search>
+          </Search> */}
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <IconButton

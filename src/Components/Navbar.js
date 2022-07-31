@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import image from "../assets/logo/new_log.png";
 export default function Navbar(props) {
   const location = useLocation();
-  console.log(location);
+  // console.log(location);
   return (
     <>
       <nav
