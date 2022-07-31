@@ -108,10 +108,7 @@ const Login = () => {
                       <div className="formGroup">
                         <div className="row">
                           <div className="col">
-                            <button
-                              type="submit"
-                              className="submit__button _btn"
-                            >
+                            <button type="submit" className="submit__button">
                               Login
                             </button>
                           </div>
