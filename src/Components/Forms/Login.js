@@ -14,6 +14,7 @@ const Login = () => {
     e.preventDefault();
     const isValid = formValidation();
     if (isValid) {
+      alert("Logged in successfully !!!")
       navigate("/welcomepage");
       setNumber("");
       setPassword("");
