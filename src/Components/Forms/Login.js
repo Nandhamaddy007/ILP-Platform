@@ -3,17 +3,42 @@ import "../Forms/forms.css";
 import { Link, useNavigate } from "react-router-dom";
 import image from "../../assets/logo/new_log.png";
 import Navbar from "../Navbar";
+import Swal from "sweetalert2";
 const Login = () => {
   let navigate = useNavigate();
   const [number, setNumber] = useState("");
   const [password, setPassword] = useState("");
   const [numberErr, setNumberErr] = useState({});
   const [passwordErr, setPasswordErr] = useState({});
-
+  var toastMixin = Swal.mixin({
+    toast: true,
+    icon: "success",
+    title: "General Title",
+    animation: false,
+    target: "#custom-target",
+    customClass: {
+      container: "position-absolute",
+    },
+    position: "bottom-right",
+    showConfirmButton: false,
+    timer: 1000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener("mouseenter", Swal.stopTimer);
+      toast.addEventListener("mouseleave", Swal.resumeTimer);
+    },
+  });
+  const alert = () => {
+    toastMixin.fire({
+      animation: true,
+      title: "You have successfully registered ",
+    });
+  };
   const onSubmit = (e) => {
     e.preventDefault();
     const isValid = formValidation();
     if (isValid) {
+      alert();
       navigate("/welcomepage");
       setNumber("");
       setPassword("");
@@ -69,7 +94,7 @@ const Login = () => {
                     <form onSubmit={onSubmit}>
                       <div className="formGroup col-sm-11 col-md-11">
                         <input
-                          className="form-control"
+                          className="form-control f-m"
                           placeholder="Enter your Mobile Number"
                           type="tel"
                           value={number}
@@ -88,7 +113,7 @@ const Login = () => {
 
                       <div className="formGroup col-sm-11 col-md-11 ">
                         <input
-                          className="form-control"
+                          className="form-control f-m"
                           placeholder="Enter your password"
                           type="password"
                           value={password}
