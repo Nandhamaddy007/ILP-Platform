@@ -12,7 +12,7 @@ import GradeRender from "./GradeRender";
 import Groups from "./Groups";
 
 const WelcomePage = () => {
-  useEffect(()=>{},[window.screen.width])
+  useEffect(() => {}, [window.screen.width]);
   const renderData = [
     {
       grade: "9th Grade",
@@ -39,7 +39,6 @@ const WelcomePage = () => {
       background: "bg-four",
     },
   ];
-  const [index, setIndex] = useState();
   const [showComponent, setShowComponent] = useState(false);
   const [show, setShow] = useState({ index: null });
   const showHidden = (i) => {
@@ -51,12 +50,21 @@ const WelcomePage = () => {
   };
 
   const hidden = (i) => {
-    if (i == show.index) {
+    if (i === show.index) {
       setShowComponent(!showComponent);
     } else {
       setShowComponent(true);
     }
   };
+  // const [active, setActive] = useState(false);
+  // const activeBtn = (i) => {
+  //   if (i === show.index) {
+  //     setActive(true);
+  //     console.log("ffffffffffffffffffffffffffffffffffffffffffffff");
+  //   } else {
+  //     setActive(false);
+  //   }
+  // };
   return (
     <div className="welcomepage-home">
       <>
@@ -66,32 +74,37 @@ const WelcomePage = () => {
           <div className="section-row">
             {/* mobile view */}
 
-            {window.screen.width<=450 ? <div>
-<Groups  data={renderData}
-                 />
-</div>:<>
-            {renderData.map((data, ind) => {
-              return (
-                <> {/* PC view */}
-                  <GradeRender
-                    data={data}
-                    index={ind}
-                    hide={showHidden}
-                    show={hidden}
+            {window.screen.width <= 450 ? (
+              <div>
+                <Groups data={renderData} />
+              </div>
+            ) : (
+              <>
+                {renderData.map((data, ind) => {
+                  return (
+                    <>
+                      {" "}
+                      {/* PC view */}
+                      <GradeRender
+                        data={data}
+                        index={ind}
+                        hide={showHidden}
+                        show={hidden}
+                        active={show.index}
+                        // activeBtn={activeBtn}
+                      />
+                    </>
+                  );
+                })}
+                {showComponent && (
+                  <HiddenComponent
+                    data={renderData[show.index]?.categories}
+                    grade={renderData[show.index]?.grade}
                   />
-                </>
-              );
-            })}        
-          {showComponent && (
-            <HiddenComponent
-              data={renderData[show.index]?.categories}
-              grade={renderData[show.index]?.grade}
-            />
-          )}
-          </>
-}
-          
-</div>
+                )}
+              </>
+            )}
+          </div>
           <div className="chart">{<BarChart />}</div>
         </section>
       </>
@@ -105,7 +118,7 @@ export const HiddenComponent = (props) => {
     Engineer: <EngineeringIcon />,
     Lawyer: <GavelIcon />,
   };
-  
+
   return (
     <>
       <section className="Hidden-section-wrap animate__animated animate__fadeInDown animate__fast">
@@ -119,7 +132,7 @@ export const HiddenComponent = (props) => {
                 >
                   <div className="Profession-card-wrap">
                     <div className="Profession-bg-one Profession-card">
-                      <div className="Profession-card-body">
+                      <div className="Profession-card-body sparkle u-hover--sparkle">
                         <div className="Profession-card-body-content">
                           <div className="Profession-career-icon-wrap">
                             <i className="icons"> {sample[data]}</i>

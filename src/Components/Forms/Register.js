@@ -7,6 +7,7 @@ import Popover from "@mui/material/Popover";
 import Typography from "@mui/material/Typography";
 import axios from "axios";
 import Navbar from "../Navbar";
+import Swal from "sweetalert2";
 const Register = () => {
   const [show, setShow] = useState(false);
   const ShowHide = (ev) => {
@@ -163,6 +164,20 @@ export const HiddenSecond = () => {
     const valid = validate(formValues);
     if (!valid.confirmPassword && !valid.password && !valid.otp) {
       postData();
+      Swal.fire({
+        toast: true,
+        icon: "success",
+        title: "You have successfully registered",
+        animation: false,
+        position: "top-right",
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener("mouseenter", Swal.stopTimer);
+          toast.addEventListener("mouseleave", Swal.resumeTimer);
+        },
+      });
       console.log("final......" + JSON.stringify(formValues));
       navigate("/login");
     } else {

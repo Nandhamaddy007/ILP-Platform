@@ -20,8 +20,11 @@
     "react-icons": "^4.4.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
+    "react-toastify": "^9.0.7",
     "serve": "^13.0.2",
     "styled-components": "^5.3.5",
+    "sweetalert": "^2.1.2",
+    "sweetalert2": "^11.4.24",
     "web-vitals": "^2.1.4",
     "workbox-background-sync": "^6.5.3",
     "workbox-broadcast-update": "^6.5.3",
@@ -61,6 +64,7 @@
     ]
   },
   "devDependencies": {
-    "@faker-js/faker": "^7.3.0"
+    "@faker-js/faker": "^7.3.0",
+    "sass": "^1.54.0"
   }
 }

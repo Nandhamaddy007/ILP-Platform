@@ -193,15 +193,15 @@ export default function FilterScreen(props) {
                   <option>All Career</option>
                   <option>NA</option>
                   <option>Doctor</option>
-                    <option>Engineer</option>
-                    <option>Lawyer</option>
-                    <option>Scientist</option>
-                    <option>Police</option>
-                    <option>Chef</option>
-                    <option>Farmer</option>
-                    <option>Pilot</option>
-                    <option>Politician</option>
-                    <option>Business</option>
+                  <option>Engineer</option>
+                  <option>Lawyer</option>
+                  <option>Scientist</option>
+                  <option>Police</option>
+                  <option>Chef</option>
+                  <option>Farmer</option>
+                  <option>Pilot</option>
+                  <option>Politician</option>
+                  <option>Business</option>
                 </select>
               </div>
             </div>
@@ -238,7 +238,6 @@ export default function FilterScreen(props) {
                             >
                               <EditIcon />
                             </IconButton>
-                           
                           </td>
                         </tr>{" "}
                       </>
