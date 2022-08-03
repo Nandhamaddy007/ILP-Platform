@@ -6,7 +6,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
- font-family: 'Tinos', serif;
+ font-family: Georgia, 'Times New Roman', Times, serif
 }
 
 .welcomepage-home {
@@ -14,7 +14,7 @@
     height: 100%;
     padding: 2rem;
     display: flex;
-    justify-content: center;
+    
     margin-top: 1.2rem;
 }
 
@@ -313,4 +313,27 @@ zoom: .95;
     font-size: 28px;
     font-weight: 600;
     color: #295263;
+}
+.icon{
+    border-radius: 5%;
+    transition : ease;
+}
+.boy-icon{
+    font-size:10rem;
+    background:rgba(7, 225, 225, 0.5);
+    color:white;
+    margin:3rem ;
+    
+}
+.girl-icon{
+    font-size:10rem;
+    background:rgba(195, 56, 119, 0.5);
+    color:white;
+    margin:3rem; 
+    
+}
+.icon:hover{
+    transform: scale(1.1);
+    cursor:pointer;
+  
 }

@@ -5,7 +5,7 @@ export default function GradeRender(props){
     return (
       <>
         <div
-          className="card-wrap"
+          className="card-wrap active"
           onClick={() => {
             props.hide(props.index);
             props.show(props.index);

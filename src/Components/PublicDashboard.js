@@ -1,5 +1,5 @@
 import './dashboard.css'
-import Navbar from "../Navbar";
+import Navbar from "./Navbar";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 export default function PublicDashboard(props) {
