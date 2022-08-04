@@ -27,11 +27,11 @@ if (isValid){
   let isValid=true;
 
   if (number.trim().length>10){
-    numberErr.numberShort="Invalid Number !";
+    numberErr.numberShort="Mobile Number is Required !";
     isValid=false;
    }
   if (number.trim().length<10){
-    numberErr.numberShort="Invalid Number !";
+    numberErr.numberShort=" Mobile Number is Required !";
   
     isValid=false;
    }
@@ -41,7 +41,7 @@ if (isValid){
    }
  
  if (password.trim().length<6){
-  passwordErr.passwordShort="Must be 6 character !";
+  passwordErr.passwordShort="Enter the correct password !";
   isValid=false;
  }
 
@@ -53,6 +53,7 @@ if (isValid){
   
   return (
     <>
+      {" "}
       <Navbar />
     <main className="class-container">
         <div className="login-body">
