@@ -442,7 +442,7 @@ export default function NavigationBar() {
                   <ListItemIcon>
                     <SchoolOutlinedIcon />
                   </ListItemIcon>
-                  <ListItemText primary="teachers" />
+                  <ListItemText primary="Teachers" />
                   {openList ? <ExpandLess /> : <ExpandMore />}
                 </ListItemButton>
               </List>

@@ -31,7 +31,7 @@ const Login = () => {
   const alert = () => {
     toastMixin.fire({
       animation: true,
-      title: "You have successfully registered ",
+      title: "Logged in successfully ",
     });
   };
   const onSubmit = (e) => {

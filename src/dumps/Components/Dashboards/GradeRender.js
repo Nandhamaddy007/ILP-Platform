@@ -15,9 +15,18 @@ export default function GradeRender(props){
         }}
       >
         <div
+<<<<<<< HEAD:src/Components/Dashboards/GradeRender.js
           className={
             props.index === props.active ? "active card" : "bg-two card"
           }
+=======
+          className="card-wrap active"
+          onClick={() => {
+            props.hide(props.index);
+            props.show(props.index);
+            setShowActive(props.index)
+          }}
+>>>>>>> 06033f3fe7e8b197e9c5a2990239410113de4a59:src/dumps/Components/Dashboards/GradeRender.js
         >
           <div
             className={
