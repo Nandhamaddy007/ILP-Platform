@@ -1,12 +1,12 @@
 import LeftDash from "./Leftdash";
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from "react";
-import EditStudent from "../Forms/EditStudent";
-import './dashboard.css'
+import EditStudent from "../../../Components/Forms/EditStudent";
+import "../../../Components/dashboard.css";
 import { Button } from "@mui/material";
-import IconButton from '@mui/material/IconButton';
-import DownloadIcon from '@mui/icons-material/Download';
-import NavigationBar from "../NavigationBar";
+import IconButton from "@mui/material/IconButton";
+import DownloadIcon from "@mui/icons-material/Download";
+import NavigationBar from "../../../Components/NavigationBar";
 import EditIcon from "@mui/icons-material/Edit";
 export default function FilterScreen(props) {
   let data = useParams();
@@ -102,50 +102,44 @@ export default function FilterScreen(props) {
     },
   ];
   const [studentData, setStudentData] = useState(temp);
-  const [csvHolder, setCsvHolder] = useState()
+  const [csvHolder, setCsvHolder] = useState();
   useEffect(() => {
     console.log(Object.keys(data).length == 0, data);
     setFilters({ ...data });
     if (Object.keys(data).length > 0) setTable(data);
   }, []);
-  const jsonToCsv=(json)=>{
-    console.log(json)
-    if(json.length>1){
+  const jsonToCsv = (json) => {
+    console.log(json);
+    if (json.length > 1) {
       const heading = Object.keys(json[0]).join(",");
       const body = json.map((j) => Object.values(j).join(",")).join("n");
-      setCsvHolder(`${heading}${body}`)
+      setCsvHolder(`${heading}${body}`);
     }
-    
-  }
+  };
   const setTable = (val) => {
-    var n
+    var n;
     if (val["class"] == "All Classes" && val["type"] == "All Career") {
-      n=[...temp];
-    } else      
-        n=temp.filter((data, ind) => {
-          if (val["class"] == "All Classes") {
-            if (data["pTask"] === val["type"]) {
-              return data;
-            }
-          } else if (val["type"] == "All Career") {
-            if (data["class"] === val["class"]) {
-              return data;
-            }
-          } else {
-            console.log(val, data);
-            if (
-              data["class"] === val["class"] &&
-              data["pTask"] === val["type"]
-            ) {
-              return data;
-            }
+      n = [...temp];
+    } else
+      n = temp.filter((data, ind) => {
+        if (val["class"] == "All Classes") {
+          if (data["pTask"] === val["type"]) {
+            return data;
+          }
+        } else if (val["type"] == "All Career") {
+          if (data["class"] === val["class"]) {
+            return data;
+          }
+        } else {
+          console.log(val, data);
+          if (data["class"] === val["class"] && data["pTask"] === val["type"]) {
+            return data;
           }
         }
-
-      );
-      setStudentData(n)
-      jsonToCsv(n)
-  }
+      });
+    setStudentData(n);
+    jsonToCsv(n);
+  };
   const setEdit = (obj) => {
     setEditData({
       ...editData,
@@ -164,7 +158,7 @@ export default function FilterScreen(props) {
       type: "",
       ...filters,
       [e.target.name]: e.target.value,
-    })
+    });
   };
   return (
     <>
@@ -175,7 +169,7 @@ export default function FilterScreen(props) {
           <div className="mt-4">
             <div>
               {" "}
-              <h1>Filter Screen</h1>
+              <h1>Career Path</h1>
             </div>
             <br />
             <div className="row">
@@ -220,17 +214,20 @@ export default function FilterScreen(props) {
               </div>
             </div>
             <div className="mt-5 scroller">
-            <IconButton aria-label="download" onClick={()=>{                
+              <IconButton
+                aria-label="download"
+                onClick={() => {
                   const element = document.createElement("a");
-                  const file = new Blob([csvHolder], {type: 'text/plain'});
+                  const file = new Blob([csvHolder], { type: "text/plain" });
                   element.href = URL.createObjectURL(file);
                   element.download = "students.csv";
-                  document.body.appendChild(element); 
+                  document.body.appendChild(element);
                   element.click();
-                
-              }}>
-  <DownloadIcon />.csv
-</IconButton>
+                }}
+              >
+                <DownloadIcon />
+                .csv
+              </IconButton>
               {/* <div className="btn"
               onClick={()=>{                
                   const element = document.createElement("a");

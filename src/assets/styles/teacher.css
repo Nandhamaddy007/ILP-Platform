@@ -1,0 +1,76 @@
+
+.student-activity{ 
+    width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: #fff;
+  padding: 2rem;
+  color: #000;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  
+}
+.act-wrap{
+   margin: 3rem auto;
+  border: 3px solid rgb(51, 160, 255);
+ padding: 1rem;
+ }
+.act-text{
+    text-align: center;
+}
+
+.button {
+  margin : 20px auto;
+  width : 100%;
+  overflow: hidden;
+  text-align : center;
+  transition : .2s;
+  cursor : pointer;
+  border-radius: 6px;
+  
+}
+.btnText {
+  color : white;
+  transition : .3s;
+}
+.act-button {
+  width: 100%;
+height: 3rem;
+  font-weight: bold;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+background-color: #11a7f3;
+  border: none;
+  border-radius: 6px;
+}
+
+.act-button:hover {
+     background-color: #ffbc53;
+  box-shadow: 0px 5px 6px rgba(0,0,0,0.3);
+}
+
+.act-button:active {
+  transform: scale(0.98);
+}
+
+
+
+.act-section-wrap {
+    padding: 64px 0 0 0;
+
+
+}
+
+
+.act-section-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -1.5rem;
+    margin-right: -0.75rem;
+    margin-left: -0.75rem;
+    margin-bottom: 3rem;
+
+}

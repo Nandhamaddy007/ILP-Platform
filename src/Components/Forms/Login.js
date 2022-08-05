@@ -39,7 +39,7 @@ const Login = () => {
     const isValid = formValidation();
     if (isValid) {
       alert();
-      navigate("/welcomepage");
+      navigate("/teacher");
       setNumber("");
       setPassword("");
     }
