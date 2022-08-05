@@ -1,8 +1,9 @@
 import NavigationBar from '../NavigationBar'
 import '../../assets/styles/welcomePage.css'
-import { Avatar, Card, Paper } from '@mui/material'
+import {  Card, } from '@mui/material'
 import BoyRoundedIcon from '@mui/icons-material/BoyRounded';
 import GirlRoundedIcon from '@mui/icons-material/GirlRounded';
+import CompletedActComponent from './CompletedAct';
 export default function Layout(props){
     return(
         <>
@@ -34,8 +35,11 @@ export default function Layout(props){
             </div>
             </Card>
       </div>
+      <br/>
+      <CompletedActComponent />
         
         </section>
+      
         </div>
         </>
     )
