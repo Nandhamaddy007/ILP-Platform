@@ -24,7 +24,7 @@
     "serve": "^13.0.2",
     "styled-components": "^5.3.5",
     "sweetalert": "^2.1.2",
-    "sweetalert2": "^11.4.24",
+    "sweetalert2": "^11.4.26",
     "web-vitals": "^2.1.4",
     "workbox-background-sync": "^6.5.3",
     "workbox-broadcast-update": "^6.5.3",

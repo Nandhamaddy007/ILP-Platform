@@ -49,22 +49,22 @@ export default function Layout(props) {
                   </div>
                   <div className="act-section-row">
                     <div>
-                      <BoyRoundedIcon
+                      {/* <BoyRoundedIcon
                         className="icon boy-icon"
                         sx={{ fontSize: "5rem" }}
-                      />
-                      <h3 style={{ marginLeft: "4.5rem" }}>
+                      /> */}
+                      {/* <h3 style={{ marginLeft: "4.5rem" }}>
                         Boys: <b>76</b>
-                      </h3>
+                      </h3> */}
                     </div>
                     <div>
-                      <GirlRoundedIcon
+                      {/* <GirlRoundedIcon
                         className="icon girl-icon"
                         sx={{ fontSize: "5rem" }}
-                      />
-                      <h3 style={{ marginLeft: "4.5rem" }}>
+                      /> */}
+                      {/* <h3 style={{ marginLeft: "4.5rem" }}>
                         Girls: <b>48</b>
-                      </h3>
+                      </h3> */}
                     </div>
                   </div>
                 </div>
