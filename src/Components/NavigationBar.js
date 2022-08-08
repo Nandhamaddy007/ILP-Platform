@@ -226,9 +226,9 @@ export default function NavigationBar() {
       <a href="#" className="link">
         <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
       </a>
-      <a href="#" className="link">
+      {/* <a href="#" className="link">
         <MenuItem onClick={handleMenuClose}>My account</MenuItem>
-      </a>
+      </a> */}
       <a href="/login" className="link">
         <MenuItem onClick={handleMenuClose}>Logout</MenuItem>
       </a>
@@ -442,7 +442,7 @@ export default function NavigationBar() {
                   <ListItemIcon>
                     <SchoolOutlinedIcon />
                   </ListItemIcon>
-                  <ListItemText primary="teachers" />
+                  <ListItemText primary="Teachers" />
                   {openList ? <ExpandLess /> : <ExpandMore />}
                 </ListItemButton>
               </List>
@@ -453,7 +453,7 @@ export default function NavigationBar() {
                   <ListItemIcon>
                     <StarBorder />
                   </ListItemIcon>
-                  <ListItemText primary="Career List" />
+                  <ListItemText primary="Sudent List" />
                 </ListItemButton>
               </List>
               <List component="div" disablePadding className="list">
@@ -461,7 +461,7 @@ export default function NavigationBar() {
                   <ListItemIcon>
                     <StarBorder sx={{ bgcolor: "#fff" }} />
                   </ListItemIcon>
-                  <ListItemText primary="Class List" />
+                  <ListItemText primary="Career List" />
                 </ListItemButton>
               </List>
               <List component="div" disablePadding className="list">

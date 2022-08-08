@@ -32,7 +32,7 @@ export default function Groups(props) {
         <div className="section-row" id="classAccordion">
           {Object.keys(sample).map((val, index) => {
             return (
-              <div className="card-wrap" id={val + "heading"}>
+              <div className="card-wrap c" id={val + "heading"}>
                 <div className={props.data[index].background}>
                   <div
                     className="card-body "
@@ -66,7 +66,7 @@ export default function Groups(props) {
                   </div>
                 </div>
                 <div
-                  id={"class"+val.split(" ")[0]}
+                  id={"class" + val.split(" ")[0]}
                   className="accordion-collapse collapse"
                   aria-labelledby={val + "heading"}
                   data-bs-parent="#classAccordion"

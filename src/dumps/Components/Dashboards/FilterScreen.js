@@ -4,8 +4,9 @@ import { useEffect, useState } from "react";
 import EditStudent from "../Forms/EditStudent";
 import './dashboard.css'
 import { Button } from "@mui/material";
+import IconButton from '@mui/material/IconButton';
+import DownloadIcon from '@mui/icons-material/Download';
 import NavigationBar from "../NavigationBar";
-import IconButton from "@mui/material/IconButton";
 import EditIcon from "@mui/icons-material/Edit";
 export default function FilterScreen(props) {
   let data = useParams();
@@ -101,17 +102,27 @@ export default function FilterScreen(props) {
     },
   ];
   const [studentData, setStudentData] = useState(temp);
+  const [csvHolder, setCsvHolder] = useState()
   useEffect(() => {
     console.log(Object.keys(data).length == 0, data);
     setFilters({ ...data });
     if (Object.keys(data).length > 0) setTable(data);
   }, []);
+  const jsonToCsv=(json)=>{
+    console.log(json)
+    if(json.length>1){
+      const heading = Object.keys(json[0]).join(",");
+      const body = json.map((j) => Object.values(j).join(",")).join("n");
+      setCsvHolder(`${heading}${body}`)
+    }
+    
+  }
   const setTable = (val) => {
+    var n
     if (val["class"] == "All Classes" && val["type"] == "All Career") {
-      setStudentData([...temp]);
-    } else
-      setStudentData(
-        temp.filter((data, ind) => {
+      n=[...temp];
+    } else      
+        n=temp.filter((data, ind) => {
           if (val["class"] == "All Classes") {
             if (data["pTask"] === val["type"]) {
               return data;
@@ -129,9 +140,12 @@ export default function FilterScreen(props) {
               return data;
             }
           }
-        })
+        }
+
       );
-  };
+      setStudentData(n)
+      jsonToCsv(n)
+  }
   const setEdit = (obj) => {
     setEditData({
       ...editData,
@@ -150,7 +164,7 @@ export default function FilterScreen(props) {
       type: "",
       ...filters,
       [e.target.name]: e.target.value,
-    });
+    })
   };
   return (
     <>
@@ -193,19 +207,41 @@ export default function FilterScreen(props) {
                   <option>All Career</option>
                   <option>NA</option>
                   <option>Doctor</option>
-                    <option>Engineer</option>
-                    <option>Lawyer</option>
-                    <option>Scientist</option>
-                    <option>Police</option>
-                    <option>Chef</option>
-                    <option>Farmer</option>
-                    <option>Pilot</option>
-                    <option>Politician</option>
-                    <option>Business</option>
+                  <option>Engineer</option>
+                  <option>Lawyer</option>
+                  <option>Scientist</option>
+                  <option>Police</option>
+                  <option>Chef</option>
+                  <option>Farmer</option>
+                  <option>Pilot</option>
+                  <option>Politician</option>
+                  <option>Business</option>
                 </select>
               </div>
             </div>
             <div className="mt-5 scroller">
+            <IconButton aria-label="download" onClick={()=>{                
+                  const element = document.createElement("a");
+                  const file = new Blob([csvHolder], {type: 'text/plain'});
+                  element.href = URL.createObjectURL(file);
+                  element.download = "students.csv";
+                  document.body.appendChild(element); 
+                  element.click();
+                
+              }}>
+  <DownloadIcon />.csv
+</IconButton>
+              {/* <div className="btn"
+              onClick={()=>{                
+                  const element = document.createElement("a");
+                  const file = new Blob([csvHolder], {type: 'text/plain'});
+                  element.href = URL.createObjectURL(file);
+                  element.download = "students.csv";
+                  document.body.appendChild(element); 
+                  element.click();
+                
+              }}
+              >Download as CSV</div> */}
               <table className="table table-hover">
                 <thead style={{ background: "#42a5f5", color: "white" }}>
                   <tr>
@@ -238,7 +274,6 @@ export default function FilterScreen(props) {
                             >
                               <EditIcon />
                             </IconButton>
-                           
                           </td>
                         </tr>{" "}
                       </>

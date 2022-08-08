@@ -19,8 +19,10 @@
 
  }
  .Filter-container{
-  padding: 0 50px 0 64px;
+   padding: 0 10px 0 64px;
  }
+.mt-4{    margin-left: .5rem;} 
+
 
  @media (min-width: 576px) {
     .h-sm-100 {
