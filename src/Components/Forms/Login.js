@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "../Forms/forms.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import image from "../../assets/logo/new_log.png";
 import Navbar from "../Navbar";
 import Swal from "sweetalert2";
@@ -49,35 +49,37 @@ const Login = () => {
     var passwordErr = {};
     let isValid = true;
 
-    if (number.trim().length > 10) {
-      numberErr.numberShort = "Invalid Number !";
-      isValid = false;
-    }
-    if (number.trim().length < 10) {
-      numberErr.numberShort = "Invalid Number !";
 
-      isValid = false;
-    }
-    if (password.trim().length > 10) {
-      passwordErr.passwordShort = "Enter correct password !";
-      isValid = false;
-    }
+  if (number.trim().length>10){
+    numberErr.numberShort="Mobile Number is Required !";
+    isValid=false;
+   }
+  if (number.trim().length<10){
+    numberErr.numberShort=" Mobile Number is Required !";
+  
+    isValid=false;
+   }
+   if (password.trim().length>10){
+    passwordErr.passwordShort="Enter correct password !";
+    isValid=false;
+   }
+ 
+ if (password.trim().length<6){
+  passwordErr.passwordShort="Enter the correct password !";
+  isValid=false;
+ }
 
-    if (password.trim().length < 6) {
-      passwordErr.passwordShort = "should be 6 character !";
-      isValid = false;
-    }
+ setNumberErr(numberErr);
+ setPasswordErr(passwordErr);
+ return isValid;
 
-    setNumberErr(numberErr);
-    setPasswordErr(passwordErr);
-    return isValid;
-  };
-
+ }
+  
   return (
     <>
       {" "}
       <Navbar />
-      <main className="class-container">
+    <main className="class-container">
         <div className="login-body">
           <div className="login-wrapper">
             <div className="login-container">
@@ -87,6 +89,7 @@ const Login = () => {
                 </div>
                 <div className="login-right">
                   <div className="login-right-wrap">
+
                     <h1 className="login__title">Login</h1>
 
                     <div className="divider"></div>
@@ -161,11 +164,7 @@ const Login = () => {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </main>
-    </>
-  );
-};
+
+  }
 export default Login;
+
