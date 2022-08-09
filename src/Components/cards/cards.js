@@ -2,6 +2,7 @@ import React from "react";
 import "./Cards.css";
 import Card from "../card/card";
 import ActivityCard from "../card/ActivityCard";
+
 export const cardsData = [
   {
     color: {
@@ -20,6 +21,7 @@ export const grade9 = [
       description:
         " You’ll learn something new every day, which means you’re making progress every day.",
       lastDate: "1/1/2023",
+      expandClass: "ExpandedCard-act ",
     },
   },
 ];
@@ -33,6 +35,7 @@ export const grade10 = [
       description:
         "You’ll learn something new every day, which means you’re making progress every day.",
       lastDate: "12/04/2023",
+      expandClass: "ExpandedCard-act-2 ",
     },
   },
 ];
@@ -70,8 +73,8 @@ const Cards = () => {
           <>
             {" "}
             <div className="parentContainer" key={id}>
-              <h5 className="act-h hd">
-                <b>Activities</b>
+              <h5 className="act-h">
+                <b className="hd">Activities</b>
               </h5>
               <ActivityCard color={card.color} />
             </div>

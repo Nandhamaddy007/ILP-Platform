@@ -3,8 +3,8 @@ import "./card.css";
 import "react-circular-progressbar/dist/styles.css";
 import { motion, AnimateSharedLayout } from "framer-motion";
 import { UilTimes } from "@iconscout/react-unicons";
-import image from "../../assets/logo/logo1.png";
 import TaskAltIcon from "@mui/icons-material/TaskAlt";
+import image from "../../assets/logo/logo1.png";
 // parent Card
 export const Class9 = [
   {
@@ -17,23 +17,24 @@ export const Class9 = [
 ];
 const ActivityCard = (props) => {
   const [expanded, setExpanded] = useState(false);
-  const [completed, setCompleted] = useState(false);
-  const complete = () => {
-    setCompleted(true);
-  };
+  //   const [completed, setCompleted] = useState(false);
+  //   const complete = () => {
+  //     setCompleted(!completed);
+  //     alert("hiiiiiiiiiiiiiiii");
+  //   };
   return (
     <AnimateSharedLayout>
       {expanded ? (
         <ExpandedCard
           param={props}
           setExpanded={() => setExpanded(false)}
-          complete={complete}
+          //   complete={complete}
         />
       ) : (
         <CompactCard
           param={props}
           setExpanded={() => setExpanded(true)}
-          Completed={completed}
+          //   Completed={completed}
         />
       )}
     </AnimateSharedLayout>
@@ -41,7 +42,7 @@ const ActivityCard = (props) => {
 };
 
 // Compact Card
-function CompactCard({ param, setExpanded, completed }) {
+function CompactCard({ param, setExpanded }) {
   return (
     <motion.div
       className="CompactCard"
@@ -66,19 +67,18 @@ function CompactCard({ param, setExpanded, completed }) {
           </div>
         </div>
         <div className="activity-body">
-          <div>
+          <div className="actity-discription">
             <h6>{param.color.description}</h6>
           </div>
-          <div>
-            <span>End Date : {param.color.lastDate}</span>
-            <span
-              className={
-                completed === true
-                  ? "completedIndication"
-                  : "incompletedIndication"
-              }
-            >
-              <TaskAltIcon sx={{ color: "white", fontSize: "1rem" }} />
+          <div className="card-bottom">
+            <span className="card-bottom-text">
+              End Date : {param.color.lastDate}
+            </span>
+            <span className={"incompletedIndication"}>
+              <TaskAltIcon
+                sx={{ color: "white", fontSize: "1rem" }}
+                className="complete icon"
+              />
               completed
             </span>
           </div>
@@ -89,7 +89,7 @@ function CompactCard({ param, setExpanded, completed }) {
 }
 
 // Expanded Card
-function ExpandedCard({ param, setExpanded, setCompleted }) {
+function ExpandedCard({ param, setExpanded, complete }) {
   const initialValues = { comments: "" };
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
@@ -107,7 +107,6 @@ function ExpandedCard({ param, setExpanded, setCompleted }) {
     return errors;
   };
   const handleClose = () => {
-    setCompleted(true);
     setExpanded(false);
   };
 
@@ -120,7 +119,7 @@ function ExpandedCard({ param, setExpanded, setCompleted }) {
   };
   return (
     <motion.div
-      className="ExpandedCard"
+      className={param.color.expandClass}
       style={{
         background: param.color.backGround,
         boxShadow: param.color.boxShadow,
