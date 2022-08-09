@@ -1,0 +1,120 @@
+.CompactCard {
+  display: flex;
+  flex: 1;
+  height: 14.5rem !important;
+  border-radius: 0.7rem;
+  padding: 1rem;
+  position: relative;
+  cursor: pointer;
+  justify-content: center;
+  transition: box-shadow .3s;
+  /* border: 1px solid #86c9ff; 
+    box-shadow: 0 0 11px rgba(33,33,33,.2);  */
+}
+
+/* .CompactCard:hover {
+
+} */
+.closeButton {
+  cursor: pointer;
+  color: #183691;
+}
+
+.closeButton:hover {
+  border: 1px solid #183691;
+  background-color: #183691;
+  color: #fff;
+}
+.Act-closebutton {
+  cursor: pointer;
+  color: #183691;
+}
+
+.Act-closebutton:hover {
+  border: 1px solid #183691;
+  background-color: #183691;
+  color: #fff;
+}
+.activity-Card-Content{
+  width: 100%;
+}
+.act_logo {
+    width: 1.5rem;
+    margin-top: -3px;
+}
+.activity-header{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: .5rem;
+}
+.activity-heading{
+  margin-left: .75rem;
+}
+.ExpandedCard {
+  position: absolute;
+  width: 40%;
+  height: 40vh;
+  z-index: 9;
+  left: 13rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem;
+}
+.incompletedIndication{
+    background-color: gainsboro;
+    padding: .1rem .5rem;
+    border-radius: 1rem;
+    margin-left: .5rem;
+}
+.completedIndication{
+    background-color: rgb(57, 190, 80);
+    padding: .1rem .5rem;
+    border-radius: 1rem;
+    margin-left: .5rem;
+}
+
+
+@media screen and (max-width: 1200px) {
+  .ExpandedCard {
+    top: 2rem;
+    height: 45vh;
+    left: 6rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .ExpandedCard {
+    top: 8rem;
+    height: 40%;
+    left: 25px;
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .ExpandedCard {
+    top: 8rem;
+    height: 30%;
+    left: 25px;
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .CompactCard {
+    display: flex;
+    flex: 1;
+    height: 11.5rem !important;
+    border-radius: 0.7rem;
+    color: white;
+    padding: 1rem;
+    position: relative;
+    cursor: pointer;
+    justify-content: center;
+
+  }
+}

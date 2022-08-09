@@ -6,14 +6,11 @@ import StepContent from "@mui/material/StepContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { useState } from "react";
-import "../../assets/styles/teacher.css";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
+import "../../assets/styles/teacher.css";
 import DialogTitle from "@mui/material/DialogTitle";
-import { InputLabel } from "@mui/material";
-import TextareaAutosize from "@mui/material/TextareaAutosize";
-
 const Activities = (props) => {
   const [open, setOpen] = React.useState(false);
 
@@ -80,7 +77,7 @@ const Activities = (props) => {
           </Dialog>
         </div>
         {props.activities.map((step, index) => (
-          <Box sx={{ maxWidth: 400 }}>
+          <Box sx={{ maxWidth: 200 }}>
             <Step key={index}>
               <StepLabel>{step.grade}</StepLabel>
               <StepLabel>{step.name}</StepLabel>

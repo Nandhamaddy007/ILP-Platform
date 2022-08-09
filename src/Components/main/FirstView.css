@@ -1,0 +1,29 @@
+.MainDash{
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 2rem;
+}
+
+@media screen and (max-width: 1000px) {
+    .MainDash{
+        justify-content:flex-start;
+        margin: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px)
+{
+    .MainDash{
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 480px)
+{
+    .MainDash{
+       margin: 1rem;
+    }
+
+}
