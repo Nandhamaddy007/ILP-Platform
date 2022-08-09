@@ -49,37 +49,34 @@ const Login = () => {
     var passwordErr = {};
     let isValid = true;
 
+    if (number.trim().length > 10) {
+      numberErr.numberShort = "Mobile Number is Required !";
+      isValid = false;
+    }
+    if (number.trim().length < 10) {
+      numberErr.numberShort = " Mobile Number is Required !";
 
-  if (number.trim().length>10){
-    numberErr.numberShort="Mobile Number is Required !";
-    isValid=false;
-   }
-  if (number.trim().length<10){
-    numberErr.numberShort=" Mobile Number is Required !";
-  
-    isValid=false;
-   }
-   if (password.trim().length>10){
-    passwordErr.passwordShort="Enter correct password !";
-    isValid=false;
-   }
- 
- if (password.trim().length<6){
-  passwordErr.passwordShort="Enter the correct password !";
-  isValid=false;
- }
+      isValid = false;
+    }
+    if (password.trim().length > 10) {
+      passwordErr.passwordShort = "Enter correct password !";
+      isValid = false;
+    }
 
- setNumberErr(numberErr);
- setPasswordErr(passwordErr);
- return isValid;
+    if (password.trim().length < 6) {
+      passwordErr.passwordShort = "Enter the correct password !";
+      isValid = false;
+    }
 
- }
-  
+    setNumberErr(numberErr);
+    setPasswordErr(passwordErr);
+    return isValid;
+  };
+
   return (
-    <>
-      {" "}
+    <div>
       <Navbar />
-    <main className="class-container">
+      <main className="class-container">
         <div className="login-body">
           <div className="login-wrapper">
             <div className="login-container">
@@ -89,7 +86,6 @@ const Login = () => {
                 </div>
                 <div className="login-right">
                   <div className="login-right-wrap">
-
                     <h1 className="login__title">Login</h1>
 
                     <div className="divider"></div>
@@ -164,7 +160,12 @@ const Login = () => {
                   </div>
                 </div>
               </div>
-
-  }
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  );
+};
 export default Login;
 
