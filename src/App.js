@@ -5,7 +5,7 @@ import "./App.css";
 import Layout from "./Components/Teacher/Layout";
 // import BlockHeadDashboard from "./Components/Dashboards/BlockHeadDB";
 // import DistricteadDashboard from "./Components/Dashboards/DistrictHeadDB";
-// import FilterScreen from "./Components/Dashboards/FilterScreen";
+import FilterScreen from "./dumps/Components/Dashboards/FilterScreen";
 // import StateHeadDashboard from "./Components/Dashboards/StateHeadDB";
 // import StudentsdDashboard from "./Components/Dashboards/StudentsDB";
 // import TeacherDashboard from "./Components/Dashboards/TeacherDB";
@@ -15,7 +15,8 @@ import Login from "./Components/Forms/Login";
 import Register from "./Components/Forms/Register";
 import ResetPassword from "./Components/Forms/ResetPassword";
 import PublicDashboard from "./Components/PublicDashboard";
-
+import Activities from "./Components/Teacher/Activities";
+import FirstView from "./Components/main/FirstView";
 function App() {
   return (
     <>
@@ -24,12 +25,14 @@ function App() {
 
         <Routes>
           <Route path="/" element={<PublicDashboard />} />
-          
-           <Route path="teacher" element={<Layout />} />         
+          {/* <Route path="/teacher" element={<Layout />} /> */}
           <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/resetPassword" element={<ResetPassword />} />
-          
+          <Route path="/register" element={<Register />} />
+          <Route path="/resetPassword" element={<ResetPassword />} />
+          <Route path="/activities" element={<Activities />} />{" "}
+          <Route path="filter" element={<FilterScreen />} />
+          <Route path="filter/:class/:type" element={<FilterScreen />} />
+          <Route path="/teacher" element={<FirstView />} />
         </Routes>
       </BrowserRouter>
       {/* 
@@ -38,9 +41,6 @@ function App() {
             <Route path="block" element={<BlockHeadDashboard />} />
             <Route path="district" element={<DistricteadDashboard />} />
             <Route path="state" element={<StateHeadDashboard />} />
-            <Route path="filter" element={<FilterScreen />} />
-            <Route path="filter/:class/:type" element={<FilterScreen />} />
-          
             <Route path="/welcomepage" element={<WelcomePage />} /> */}
     </>
   );

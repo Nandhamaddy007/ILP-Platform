@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Tinos&display=swap');
+*,html,body{
+font-family: 'Tinos', serif;
+}
+
+
+.Cards {
+  display: flex;
+  gap: 2.5rem;
+}
+.parentContainer{
+  width: 100%;
+}
+.act-h{
+  text-align: center;
+}
+  /* .hd{
+    display: none;
+  } */
+@media screen and (max-width: 1000px) {
+  .Cards{
+    flex-direction: column;
+  }
+  .parentContainer{
+    height: 17.4rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .parentContainer{
+        height: 14.4rem;
+  }
+  .hd{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px)
+{
+  .Cards{
+    width: 90%;
+  }
+}

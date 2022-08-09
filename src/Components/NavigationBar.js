@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link } from "react-router-dom";
 import { styled, useTheme, alpha } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import MuiDrawer from "@mui/material/Drawer";
@@ -251,15 +252,15 @@ export default function NavigationBar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
+      {/* <MenuItem>
         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
           <Badge badgeContent={4} color="error">
             <MailIcon />
           </Badge>
         </IconButton>
         <p>Messages</p>
-      </MenuItem>
-      <MenuItem>
+      </MenuItem> */}
+      {/* <MenuItem>
         <IconButton
           size="large"
           aria-label="show 17 new notifications"
@@ -270,7 +271,7 @@ export default function NavigationBar() {
           </Badge>
         </IconButton>
         <p>Notifications</p>
-      </MenuItem>
+      </MenuItem> */}
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
           size="large"
@@ -332,7 +333,7 @@ export default function NavigationBar() {
           </Search> */}
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <IconButton
+            {/* <IconButton
               size="large"
               aria-label="show 4 new mails"
               color="inherit"
@@ -349,7 +350,7 @@ export default function NavigationBar() {
               <Badge badgeContent={17} color="error">
                 <NotificationsIcon />
               </Badge>
-            </IconButton>
+            </IconButton> */}
             <IconButton
               size="large"
               edge="end"
@@ -449,29 +450,32 @@ export default function NavigationBar() {
             </Collapse>
             <Collapse in={openList && openFirst} timeout="auto">
               <List component="div" disablePadding className="list">
-                <ListItemButton onClick={bringCareerList}>
+                {/* <ListItemButton onClick={bringCareerList}>
                   <ListItemIcon>
                     <StarBorder />
                   </ListItemIcon>
                   <ListItemText primary="Sudent List" />
-                </ListItemButton>
+                </ListItemButton> */}
               </List>
-              <List component="div" disablePadding className="list">
-                <ListItemButton onClick={bringClassList}>
-                  <ListItemIcon>
-                    <StarBorder sx={{ bgcolor: "#fff" }} />
-                  </ListItemIcon>
-                  <ListItemText primary="Career List" />
-                </ListItemButton>
-              </List>
-              <List component="div" disablePadding className="list">
+              <Link to="/filter" className="link">
+                {" "}
+                <List component="div" disablePadding className="list">
+                  <ListItemButton onClick={bringClassList}>
+                    <ListItemIcon>
+                      <StarBorder sx={{ bgcolor: "#fff" }} />
+                    </ListItemIcon>
+                    <ListItemText primary="Career Path" />
+                  </ListItemButton>
+                </List>
+              </Link>
+              {/* <List component="div" disablePadding className="list">
                 <ListItemButton onClick={bringActivity}>
                   <ListItemIcon>
                     <StarBorder />
                   </ListItemIcon>
                   <ListItemText primary="Activity" />
                 </ListItemButton>
-              </List>
+              </List> */}
             </Collapse>
           </List>
           <Divider />
