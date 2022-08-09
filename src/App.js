@@ -32,7 +32,7 @@ function App() {
           <Route path="/activities" element={<Activities />} />{" "}
           <Route path="filter" element={<FilterScreen />} />
           <Route path="filter/:class/:type" element={<FilterScreen />} />
-          <Route path="/teacher" element={<FirstView />} />
+          <Route path="/teacher" element={<Layout />} />
         </Routes>
       </BrowserRouter>
       {/* 

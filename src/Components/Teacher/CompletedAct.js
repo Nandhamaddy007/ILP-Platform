@@ -8,8 +8,6 @@ import './timeline.css'
 export default function CompletedActComponent(props){
     return (
       <>
-       
-       
         <h2><b>Activity Status</b></h2>
           
          <div style={{ background:"#c0dedd", borderRadius:"10px", padding:"3%", paddingTop:"1%", paddingBottom:"0%" }}>

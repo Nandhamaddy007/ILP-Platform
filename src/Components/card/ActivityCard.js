@@ -4,8 +4,7 @@ import "react-circular-progressbar/dist/styles.css";
 import { motion, AnimateSharedLayout } from "framer-motion";
 import { UilTimes } from "@iconscout/react-unicons";
 import image from "../../assets/logo/logo1.png";
-import TaskAltIcon from "@mui/icons-material/TaskAlt";
-// parent Card
+import TaskAltIcon from "@mui/icons-material/Task";
 export const Class9 = [
   {
     grade: "9th Grade",

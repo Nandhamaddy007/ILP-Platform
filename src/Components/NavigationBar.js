@@ -458,7 +458,7 @@ export default function NavigationBar() {
                     <StarBorder />
                   </ListItemIcon>
                   <ListItemText primary="Sudent List" />
-                </ListItemButton> */}
+                </ListItemButton> 
               </List>
               <Link to="/filter" className="link">
                 {" "}
@@ -478,7 +478,7 @@ export default function NavigationBar() {
                   </ListItemIcon>
                   <ListItemText primary="Activity" />
                 </ListItemButton>
-              </List> */}
+              </List> 
             </Collapse>
           </List>
           <Divider />
