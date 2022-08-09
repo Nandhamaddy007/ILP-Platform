@@ -121,8 +121,9 @@ export default function Layout(props) {
                 </div>
               </div>
             </Card> */}
+            <CompletedActComponent />
           </div>
-          <CompletedActComponent />
+          
         </section>
       </div>
     </>
