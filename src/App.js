@@ -16,6 +16,7 @@ import Register from "./Components/Forms/Register";
 import ResetPassword from "./Components/Forms/ResetPassword";
 import PublicDashboard from "./Components/PublicDashboard";
 import Activities from "./Components/Teacher/Activities";
+import FirstView from "./Components/main/FirstView";
 function App() {
   return (
     <>
@@ -24,13 +25,14 @@ function App() {
 
         <Routes>
           <Route path="/" element={<PublicDashboard />} />
-          <Route path="/teacher" element={<Layout />} />
+          {/* <Route path="/teacher" element={<Layout />} /> */}
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/resetPassword" element={<ResetPassword />} />
           <Route path="/activities" element={<Activities />} />{" "}
           <Route path="filter" element={<FilterScreen />} />
           <Route path="filter/:class/:type" element={<FilterScreen />} />
+          <Route path="/teacher" element={<FirstView />} />
         </Routes>
       </BrowserRouter>
       {/* 
