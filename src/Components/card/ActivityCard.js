@@ -6,6 +6,7 @@ import { UilTimes } from "@iconscout/react-unicons";
 import TaskAltIcon from "@mui/icons-material/TaskAlt";
 import image from "../../assets/logo/logo1.png";
 // parent Card
+
 export const Class9 = [
   {
     grade: "9th Grade",

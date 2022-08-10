@@ -34,7 +34,7 @@ export const grade10 = [
       name: "Motivation",
       description:
         "You’ll learn something new every day, which means you’re making progress every day.",
-      lastDate: "12/04/2023",
+      lastDate: "1/1/2023",
       expandClass: "ExpandedCard-act-2 ",
     },
   },

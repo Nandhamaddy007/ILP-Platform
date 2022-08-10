@@ -31,6 +31,8 @@ import ExpandMore from "@mui/icons-material/ExpandMore";
 import StarBorder from "@mui/icons-material/StarBorder";
 import MenuOpenSharpIcon from "@mui/icons-material/MenuOpenSharp";
 import SvgIcon from "@mui/material/SvgIcon";
+import AutoStoriesIcon from '@mui/icons-material/AutoStories';
+
 
 import { useState } from "react";
 import SchoolOutlinedIcon from "@mui/icons-material/SchoolOutlined";
@@ -306,7 +308,7 @@ export default function NavigationBar() {
       <CssBaseline />
       <AppBar position="fixed" open={open}>
         <Toolbar className="toolBar">
-          <IconButton
+          {/* <IconButton
             size="large"
             color="inherit"
             aria-label="open drawer"
@@ -318,7 +320,8 @@ export default function NavigationBar() {
             }}
           >
             <MenuOpenSharpIcon />
-          </IconButton>
+          </IconButton> */}
+          <AutoStoriesIcon /> {" "}&nbsp; &nbsp;
           <Typography variant="h6" noWrap component="div">
             Career Guidance
           </Typography>
@@ -380,7 +383,7 @@ export default function NavigationBar() {
       {renderMobileMenu}
       {renderMenu}
       <div className="drawer">
-        <Drawer
+        {/* <Drawer
           variant="permanent"
           open={open}
           PaperProps={{
@@ -391,7 +394,7 @@ export default function NavigationBar() {
           }}
         >
           <DrawerHeader>
-            {/* <img className="logo" src={image} alt="logo" /> */}
+            {/* <img className="logo" src={image} alt="logo" /> 
 
             <IconButton onClick={handleDrawerClose}>
               {theme.direction === "rtl" ? (
@@ -455,7 +458,7 @@ export default function NavigationBar() {
                     <StarBorder />
                   </ListItemIcon>
                   <ListItemText primary="Sudent List" />
-                </ListItemButton> */}
+                </ListItemButton> 
               </List>
               <Link to="/filter" className="link">
                 {" "}
@@ -475,11 +478,11 @@ export default function NavigationBar() {
                   </ListItemIcon>
                   <ListItemText primary="Activity" />
                 </ListItemButton>
-              </List> */}
+              </List> 
             </Collapse>
           </List>
           <Divider />
-        </Drawer>
+        </Drawer> */}
       </div>
     </Box>
   );

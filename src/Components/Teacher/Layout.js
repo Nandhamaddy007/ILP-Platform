@@ -8,6 +8,7 @@ import Activities from "./Activities";
 import Greetings from "./Greetings";
 import { data } from "jquery";
 import { Link } from "react-router-dom";
+import FirstView from "../main/FirstView";
 export default function Layout(props) {
   const grade9 = [
     {
@@ -33,8 +34,9 @@ export default function Layout(props) {
         <NavigationBar />
         <section className="section-wrap">
           <div className="act-section-row">
-            <div>
-              <Card variant="outlined" sx={{ p: 2, margin: 2 }}>
+            <FirstView />
+            {/* <div> */}
+              {/* <Card variant="outlined" sx={{ p: 2, margin: 2 }}>
                 <div id="gradient">
                   <Greetings />
                 </div>
@@ -49,22 +51,22 @@ export default function Layout(props) {
                   </div>
                   <div className="act-section-row">
                     <div>
-                      <BoyRoundedIcon
+                      {/* <BoyRoundedIcon
                         className="icon boy-icon"
                         sx={{ fontSize: "5rem" }}
-                      />
-                      <h3 style={{ marginLeft: "4.5rem" }}>
+                      /> */}
+                      {/* <h3 style={{ marginLeft: "4.5rem" }}>
                         Boys: <b>76</b>
-                      </h3>
+                      </h3> */}
                     </div>
                     <div>
-                      <GirlRoundedIcon
+                      {/* <GirlRoundedIcon
                         className="icon girl-icon"
                         sx={{ fontSize: "5rem" }}
-                      />
-                      <h3 style={{ marginLeft: "4.5rem" }}>
+                      /> */}
+                      {/* <h3 style={{ marginLeft: "4.5rem" }}>
                         Girls: <b>48</b>
-                      </h3>
+                      </h3> 
                     </div>
                   </div>
                 </div>
@@ -118,9 +120,10 @@ export default function Layout(props) {
                   })}
                 </div>
               </div>
-            </Card>
+            </Card> */}
+            <CompletedActComponent />
           </div>
-          <CompletedActComponent />
+          
         </section>
       </div>
     </>
