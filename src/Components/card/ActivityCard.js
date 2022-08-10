@@ -16,26 +16,26 @@ export const Class9 = [
     lastDate: "1/1/2023",
   },
 ];
+
 const ActivityCard = (props) => {
   const [expanded, setExpanded] = useState(false);
-  //   const [completed, setCompleted] = useState(false);
-  //   const complete = () => {
-  //     setCompleted(!completed);
-  //     alert("hiiiiiiiiiiiiiiii");
-  //   };
+  const [completed, setCompleted] = useState(false);
+  const complete = () => {
+    setCompleted(true);
+  };
   return (
     <AnimateSharedLayout>
       {expanded ? (
         <ExpandedCard
           param={props}
           setExpanded={() => setExpanded(false)}
-          //   complete={complete}
+          complete={complete}
         />
       ) : (
         <CompactCard
           param={props}
           setExpanded={() => setExpanded(true)}
-          //   Completed={completed}
+          completed={completed}
         />
       )}
     </AnimateSharedLayout>
@@ -43,7 +43,7 @@ const ActivityCard = (props) => {
 };
 
 // Compact Card
-function CompactCard({ param, setExpanded }) {
+function CompactCard({ param, setExpanded, completed }) {
   return (
     <motion.div
       className="CompactCard"
@@ -75,7 +75,13 @@ function CompactCard({ param, setExpanded }) {
             <span className="card-bottom-text">
               End Date : {param.color.lastDate}
             </span>
-            <span className={"incompletedIndication"}>
+            <span
+              className={
+                completed === true
+                  ? "completedIndication"
+                  : "incompletedIndication"
+              }
+            >
               <TaskAltIcon
                 sx={{ color: "white", fontSize: "1rem" }}
                 className="complete icon"
@@ -115,6 +121,7 @@ function ExpandedCard({ param, setExpanded, complete }) {
     e.preventDefault();
     const valid = validate(formValues);
     if (!valid.comments) {
+      complete();
       handleClose();
     }
   };
