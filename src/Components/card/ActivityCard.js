@@ -5,6 +5,9 @@ import { motion, AnimateSharedLayout } from "framer-motion";
 import { UilTimes } from "@iconscout/react-unicons";
 import TaskAltIcon from "@mui/icons-material/TaskAlt";
 import image from "../../assets/logo/logo1.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 // parent Card
 
 export const Class9 = [
@@ -53,7 +56,7 @@ function CompactCard({ param, setExpanded, completed }) {
         color: "black",
       }}
       layoutId="expandableCard"
-      onClick={setExpanded}
+      // onClick={setExpanded}
     >
       <div className="activity-Card-Content">
         <div className="activity-header">
@@ -71,24 +74,31 @@ function CompactCard({ param, setExpanded, completed }) {
           <div className="actity-discription">
             <h6>{param.color.description}</h6>
           </div>
-          <div className="card-bottom">
-            <span className="card-bottom-text">
-              End Date : {param.color.lastDate}
-            </span>
-            <span
-              className={
-                completed === true
-                  ? "completedIndication"
-                  : "incompletedIndication"
-              }
+          <div className="card-bottom row mb-xl-5 mb-lg-5 mb-md-5 mb-sm-5  ">
+            <div className="card-bottom-text col-7 col-xl-8 col-lg-7 text-start ">
+              <pre className="mb-0">End Date: {param.color.lastDate}</pre>
+            </div>
+            <button
+              type="submit"
+              className={"completedIndication col-3 col-xl-4 col-lg-2"}
             >
               <TaskAltIcon
                 sx={{ color: "white", fontSize: "1rem" }}
                 className="complete icon"
               />
               completed
-            </span>
+            </button>
           </div>
+          <Link to={"/filter/" + param.color.grade + "/" + "All Career"}>
+            {" "}
+            <button
+              className="Career-Choice-btn "
+              style={{ background: param.bg }}
+            >
+              <b> Career Choice {param.color.grade}</b>
+              <FontAwesomeIcon icon={faArrowRight} className="arrowIcon" />
+            </button>
+          </Link>
         </div>
       </div>
     </motion.div>
@@ -96,21 +106,32 @@ function CompactCard({ param, setExpanded, completed }) {
 }
 
 // Expanded Card
-function ExpandedCard({ param, setExpanded, complete }) {
+function ExpandedCard({ param, setExpanded, complete, grade }) {
   const initialValues = { comments: "" };
   const [formValues, setFormValues] = useState(initialValues);
-  const [formErrors, setFormErrors] = useState({});
+  // const [formErrors, setFormErrors] = useState({});
+  const [sucess, setSucess] = useState(false);
+  const color = () => {
+    setSucess(true);
+  };
+  const color2 = () => {
+    setSucess(false);
+  };
   const handleChange = (e) => {
     const { name, value } = e.target;
+    console.log(initialValues.comments.length);
     setFormValues({ ...formValues, [name]: value });
-    console.log(formValues);
+    console.log(formValues.comments.length);
+    color();
   };
   const validate = (values) => {
     const errors = {};
 
     if (!values.comments) {
       errors.comments = "comments is required!";
+      color2();
     }
+
     return errors;
   };
   const handleClose = () => {
@@ -123,6 +144,8 @@ function ExpandedCard({ param, setExpanded, complete }) {
     if (!valid.comments) {
       complete();
       handleClose();
+
+      console.log(formValues);
     }
   };
   return (
@@ -156,7 +179,17 @@ function ExpandedCard({ param, setExpanded, complete }) {
             </div>
           </div>
           <div>
-            <button onClick={handleSubmit}>Confirm</button>
+            {" "}
+            <button
+              onClick={handleSubmit}
+              className={
+                sucess === true
+                  ? "confirm-act-button-sucess"
+                  : "confirm-act-button"
+              }
+            >
+              Confirm
+            </button>
           </div>
         </div>
       </div>

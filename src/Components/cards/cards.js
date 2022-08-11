@@ -2,6 +2,7 @@ import React from "react";
 import "./Cards.css";
 import Card from "../card/card";
 import ActivityCard from "../card/ActivityCard";
+import { color } from "@mui/system";
 
 export const cardsData = [
   {
@@ -22,6 +23,7 @@ export const grade9 = [
         " You’ll learn something new every day, which means you’re making progress every day.",
       lastDate: "1/1/2023",
       expandClass: "ExpandedCard-act ",
+      buttonBg: "rgb(255,234,166)",
     },
   },
 ];
@@ -36,6 +38,7 @@ export const grade10 = [
         "You’ll learn something new every day, which means you’re making progress every day.",
       lastDate: "1/1/2023",
       expandClass: "ExpandedCard-act-2 ",
+      buttonBg: "rgb(174,219,255)",
     },
   },
 ];
@@ -63,7 +66,11 @@ const Cards = () => {
               <h5 className="act-h">
                 <b>Activities</b>
               </h5>
-              <ActivityCard color={card.color} />
+              <ActivityCard
+                color={card.color}
+                bg={card.color.buttonBg}
+                grade={card.color.grade}
+              />
             </div>
           </>
         );
@@ -76,7 +83,11 @@ const Cards = () => {
               <h5 className="act-h">
                 <b className="hd">Activities</b>
               </h5>
-              <ActivityCard color={card.color} />
+              <ActivityCard
+                color={card.color}
+                bg={card.color.buttonBg}
+                grade={card.color.grade}
+              />
             </div>
           </>
         );

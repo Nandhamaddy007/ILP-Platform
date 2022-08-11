@@ -3,6 +3,7 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Layout from "./Components/Teacher/Layout";
+import Profile from "./Components/profile/Profile";
 // import BlockHeadDashboard from "./Components/Dashboards/BlockHeadDB";
 // import DistricteadDashboard from "./Components/Dashboards/DistrictHeadDB";
 import FilterScreen from "./dumps/Components/Dashboards/FilterScreen";
@@ -33,6 +34,7 @@ function App() {
           <Route path="filter" element={<FilterScreen />} />
           <Route path="filter/:class/:type" element={<FilterScreen />} />
           <Route path="/teacher" element={<Layout />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
       </BrowserRouter>
       {/* 

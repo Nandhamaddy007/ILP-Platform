@@ -24,7 +24,7 @@ const Card = (props) => {
 function CompactCard({ param, setExpanded }) {
   return (
     <motion.div
-      className="CompactCard"
+      className="CompactCard pointer"
       style={{
         background: param.color.backGround,
         boxShadow: param.color.boxShadow,

@@ -5,11 +5,14 @@
   border-radius: 0.7rem;
   padding: 1rem;
   position: relative;
-  cursor: pointer;
+  /* cursor: pointer; */
   justify-content: center;
   transition: box-shadow .3s;
   /* border: 1px solid #86c9ff; 
     box-shadow: 0 0 11px rgba(33,33,33,.2);  */
+}
+.pointer{
+  cursor: pointer;
 }
 
 /* .CompactCard:hover {
@@ -51,9 +54,7 @@
   justify-content: flex-start;
   margin-bottom: 1rem;
 }
-.actity-discription{
-  padding-bottom: 6rem;
-}
+
 .ExpandedCard-act-2 {
   position: absolute;
  width: 30%;
@@ -91,19 +92,74 @@
   justify-content: space-around;
   padding: 1rem;
 }
-.incompletedIndication{
+/* .incompletedIndication{
     background-color: gainsboro;
     padding: .1rem .5rem;
     border-radius: 1rem;
     margin-left: .5rem;
-}
+} */
 .completedIndication{
-    background-color: rgb(57, 190, 80);
-    padding: .1rem .5rem;
-    border-radius: 1rem;
-    margin-left: .5rem;
+    background-color: #c4c4c4;
+    color: #fff;
+    /* padding: .1rem .5rem; */
+    border-radius: .5rem;
+    /* margin-left: .5rem; */
+    border: none;
+    width: inherit;
 }
-
+.confirm-act-button{
+  border: none;
+  border: 1px solid;
+  width: 100%;
+  border-radius: .3rem;
+  background-color: #ffbc53;
+  color: #fff;
+}
+.confirm-act-button-sucess{
+  border: none;
+  border: 1px solid;
+  width: 100%;
+  border-radius: .3rem;
+  background-color: rgb(57, 190, 80);
+  color: #fff;
+}
+.Career-Choice-btn{
+  width: 100%;
+  width: 100%;
+  border: none;
+    border-radius: .4rem;
+    /* background: #ffeaa6; */
+    height: 2rem;
+}
+.Career-Choice-btn:active{
+ 
+  /* background-color: rgb(57, 190, 80); */
+    transform: scale(0.98);
+ 
+}
+.arrowIcon{
+  position: relative;
+  left: 1.2rem;
+}
+/* .confirm-act-button-error{
+  border: none;
+  border: 1px solid;
+  width: 100%;
+  border-radius: .3rem;
+  background-color: red;
+  color: #fff;
+} */
+/* .confirm-act-button:hover{
+ 
+  background-color: rgb(57, 190, 80);
+ 
+} */
+/* .confirm-act-button:active{
+ 
+  background-color: rgb(57, 190, 80);
+    transform: scale(0.98);
+ 
+} */
 
 @media screen and (max-width: 1200px) {
   .ExpandedCard-act-2 {
@@ -121,28 +177,6 @@
     height: 45vh;
     left: 6rem;
   }
-}
-@media screen and (max-width: 1204px) {
-  .actity-discription{
-  padding-bottom: 5rem;
-}
-}
-@media screen and (max-width: 1111px) {
-  .actity-discription{
-  padding-bottom: 4rem;
-}
-}
-@media screen and (max-width: 1050px) {
-  .actity-discription{
-  padding-bottom: 3rem;
-}
-}
-
-
-@media screen and (max-width: 1000px) {
-  .actity-discription{
-  padding-bottom: 3rem;
-}
 }
 
 @media screen and (max-width: 768px) {
@@ -165,11 +199,13 @@
     left: 25px;
     width: 80%;
   }
-  .actity-discription{
-  padding-bottom: 5rem;
-}
-}
 
+}
+@media screen and (max-width: 576px) {
+.card-bottom{
+  margin-bottom: 4rem;
+}
+}
 @media screen and (max-width: 480px) {
   .ExpandedCard-act-2 {
     top: 41rem;
@@ -177,7 +213,9 @@
     left: 2.5rem;
     width: 80%;
   }
-
+.card-bottom{
+  margin-bottom: 2rem;
+}
  .ExpandedCard-act {
     top: 26rem;
     height: 23%;
@@ -196,14 +234,25 @@
   justify-content: flex-start;
  
 }
-.actity-discription{
-  padding-bottom: 2rem;
-}
-}
-@media screen and (max-width: 390px) {
 
-.actity-discription{
-  padding-bottom: 2rem;
+
+}
+@media screen and (max-width: 365px) {
+.card-bottom{
+  margin-bottom: 1rem;
+}
+.arrowIcon{
+  position: relative;
+  left: .7rem;
+}
+.completedIndication{
+  width:30%;
+  font-size: .6rem;
+  display: flex;
+  padding: .1rem .5rem;
+}
+pre{
+  font-size: .7rem;
 }
 }
 
@@ -211,20 +260,24 @@
   .CompactCard {
     display: flex;
     flex: 1;
-    height: 11.5rem !important;
+    height: 13.5rem !important;
     border-radius: 0.7rem;
     color: white;
     padding: 1rem;
     position: relative;
-    cursor: pointer;
+    /* cursor: pointer; */
     justify-content: center;
 
   }
 }
-@media screen and (max-width: 390px) {
-  .card-bottom-text {
-    font-size: smaller;
-  }
+@media screen and (max-width: 325px) {
+  .arrowIcon{
+  position: relative;
+  left: .2rem;
+}
+}
+/* @media screen and (max-width: 390px) {
+
   .incompletedIndication{
     background-color: gainsboro;
     padding: .1rem .5rem;
@@ -239,4 +292,4 @@
     margin-left: .5rem;
     font-size: small;
 }
-} 
+}  */
