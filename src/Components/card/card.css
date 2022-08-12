@@ -100,12 +100,22 @@
 } */
 .completedIndication{
     background-color: #c4c4c4;
+ 
     color: #fff;
     /* padding: .1rem .5rem; */
     border-radius: .5rem;
     /* margin-left: .5rem; */
     border: none;
     width: inherit;
+}
+.cc{
+     background:green;
+}
+.completedIndication:active{
+ 
+  /* background-color: rgb(57, 190, 80); */
+    transform: scale(0.98);
+ 
 }
 .confirm-act-button{
   border: none;

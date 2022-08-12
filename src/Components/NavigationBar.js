@@ -274,9 +274,12 @@ export default function NavigationBar() {
         </IconButton>
         <p>Notifications</p>
       </MenuItem> */}
-      <MenuItem onClick={handleProfileMenuOpen}>
+      <MenuItem
+        onClick={handleProfileMenuOpen}
+        sx={{ paddingTop: "0px", paddingBottom: "0px" }}
+      >
         <IconButton
-          size="large"
+          size="small"
           aria-label="account of current user"
           aria-controls="primary-search-account-menu"
           aria-haspopup="true"
@@ -284,7 +287,7 @@ export default function NavigationBar() {
         >
           <AccountCircle />
         </IconButton>
-        <p>Profile</p>
+        <p className="mb-0">Profile</p>
       </MenuItem>
     </Menu>
   );

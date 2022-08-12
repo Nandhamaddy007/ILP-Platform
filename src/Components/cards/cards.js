@@ -3,6 +3,7 @@ import "./Cards.css";
 import Card from "../card/card";
 import ActivityCard from "../card/ActivityCard";
 import { color } from "@mui/system";
+import Greetings from "../Teacher/Greetings";
 
 export const cardsData = [
   {
@@ -21,7 +22,7 @@ export const grade9 = [
       name: "Motivation",
       description:
         " You’ll learn something new every day, which means you’re making progress every day.",
-      lastDate: "1/1/2023",
+      lastDate: "8/12/2022",
       expandClass: "ExpandedCard-act ",
       buttonBg: "rgb(255,234,166)",
     },
@@ -36,7 +37,7 @@ export const grade10 = [
       name: "Motivation",
       description:
         "You’ll learn something new every day, which means you’re making progress every day.",
-      lastDate: "1/1/2023",
+      lastDate: "8/13/2022",
       expandClass: "ExpandedCard-act-2 ",
       buttonBg: "rgb(174,219,255)",
     },
@@ -50,9 +51,8 @@ const Cards = () => {
         return (
           <>
             <div className="parentContainer" key={id}>
-              <h5>
-                Good Morning, <b>Nandha</b>
-              </h5>
+              <Greetings />
+
               <Card color={card.color} />
             </div>
           </>

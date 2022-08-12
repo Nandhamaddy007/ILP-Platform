@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./card.css";
 import "react-circular-progressbar/dist/styles.css";
 import { motion, AnimateSharedLayout } from "framer-motion";
@@ -8,6 +8,8 @@ import image from "../../assets/logo/logo1.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import ConfirmBox from "./ConfirmBox";
+import Tooltip from "@mui/material/Tooltip";
 // parent Card
 
 export const Class9 = [
@@ -22,31 +24,63 @@ export const Class9 = [
 
 const ActivityCard = (props) => {
   const [expanded, setExpanded] = useState(false);
+  const [open, setOpen] = useState(false);
   const [completed, setCompleted] = useState(false);
-  const complete = () => {
-    setCompleted(true);
+  const [currentDate, setCurrentDate] = useState("");
+  const handleClickOpen = () => {
+    setOpen(true);
   };
+  const handleClose = () => {
+    setOpen(false);
+  };
+  useEffect(() => {
+    let dt = new Date().toLocaleDateString();
+    setCurrentDate(dt);
+  }, []);
+
   return (
     <AnimateSharedLayout>
       {expanded ? (
-        <ExpandedCard
-          param={props}
-          setExpanded={() => setExpanded(false)}
-          complete={complete}
-        />
+        <ExpandedCard param={props} setExpanded={() => setExpanded(false)} />
       ) : (
         <CompactCard
           param={props}
           setExpanded={() => setExpanded(true)}
+          handleClickOpen={handleClickOpen}
           completed={completed}
+          currentDate={currentDate}
         />
       )}
+      <ConfirmBox
+        open={open}
+        handleClose={handleClose}
+        setOpen={() => setOpen(false)}
+        setCompleted={() => setCompleted(true)}
+      />
     </AnimateSharedLayout>
   );
 };
 
 // Compact Card
-function CompactCard({ param, setExpanded, completed }) {
+function CompactCard({
+  param,
+  setExpanded,
+  handleClickOpen,
+  completed,
+  currentDate,
+}) {
+  const [open, setOpen] = React.useState(false);
+
+  React.useEffect(() => {
+    setTimeout(handleTooltipClose, 3000);
+  });
+  const handleTooltipClose = () => {
+    setOpen(false);
+  };
+
+  const handleTooltipOpen = () => {
+    setOpen(true);
+  };
   return (
     <motion.div
       className="CompactCard"
@@ -78,18 +112,45 @@ function CompactCard({ param, setExpanded, completed }) {
             <div className="card-bottom-text col-7 col-xl-8 col-lg-7 text-start ">
               <pre className="mb-0">End Date: {param.color.lastDate}</pre>
             </div>
-            <button
-              type="submit"
-              className={"completedIndication col-3 col-xl-4 col-lg-2"}
+            <Tooltip
+              // PopperProps={{
+              //   disablePortal: true,
+              // }}
+              open={open}
+              disableFocusListener
+              disableHoverListener
+              disableTouchListener
+              title="this option will be enabled on mentioned date"
             >
-              <TaskAltIcon
-                sx={{ color: "white", fontSize: "1rem" }}
-                className="complete icon"
-              />
-              completed
-            </button>
+              <button
+                type="submit"
+                className={
+                  currentDate === param.color.lastDate
+                    ? "completedIndication col-3 col-xl-4 col-lg-2 cc"
+                    : "completedIndication col-3 col-xl-4 col-lg-2 "
+                }
+                onClick={() => {
+                  if (currentDate === param.color.lastDate) {
+                    handleClickOpen();
+                  } else {
+                    handleTooltipOpen();
+                  }
+                }}
+              >
+                <TaskAltIcon
+                  sx={{
+                    color: "white",
+                    fontSize: ".8rem",
+                    marginRight: ".2rem",
+                  }}
+                  className="complete icon"
+                />
+                Completed
+              </button>
+            </Tooltip>
           </div>
-          <Link to={"/filter/" + param.color.grade + "/" + "All Career"}>
+
+          <Link to={"/filter/" + param.color.grade + "/All Career"}>
             {" "}
             <button
               className="Career-Choice-btn "
@@ -107,47 +168,47 @@ function CompactCard({ param, setExpanded, completed }) {
 
 // Expanded Card
 function ExpandedCard({ param, setExpanded, complete, grade }) {
-  const initialValues = { comments: "" };
-  const [formValues, setFormValues] = useState(initialValues);
+  // const initialValues = { comments: "" };
+  // const [formValues, setFormValues] = useState(initialValues);
   // const [formErrors, setFormErrors] = useState({});
-  const [sucess, setSucess] = useState(false);
-  const color = () => {
-    setSucess(true);
-  };
-  const color2 = () => {
-    setSucess(false);
-  };
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    console.log(initialValues.comments.length);
-    setFormValues({ ...formValues, [name]: value });
-    console.log(formValues.comments.length);
-    color();
-  };
-  const validate = (values) => {
-    const errors = {};
+  // const [sucess, setSucess] = useState(false);
+  // const color = () => {
+  //   setSucess(true);
+  // };
+  // const color2 = () => {
+  //   setSucess(false);
+  // };
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   console.log(initialValues.comments.length);
+  //   setFormValues({ ...formValues, [name]: value });
+  //   console.log(formValues.comments.length);
+  //   color();
+  // };
+  // const validate = (values) => {
+  //   const errors = {};
 
-    if (!values.comments) {
-      errors.comments = "comments is required!";
-      color2();
-    }
+  //   if (!values.comments) {
+  //     errors.comments = "comments is required!";
+  //     color2();
+  //   }
 
-    return errors;
-  };
-  const handleClose = () => {
-    setExpanded(false);
-  };
+  //   return errors;
+  // };
+  // const handleClose = () => {
+  //   setExpanded(false);
+  // };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const valid = validate(formValues);
-    if (!valid.comments) {
-      complete();
-      handleClose();
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   const valid = validate(formValues);
+  //   if (!valid.comments) {
+  //     complete();
+  //     handleClose();
 
-      console.log(formValues);
-    }
-  };
+  //     console.log(formValues);
+  //   }
+  // };
   return (
     <motion.div
       className={param.color.expandClass}
@@ -161,13 +222,11 @@ function ExpandedCard({ param, setExpanded, complete, grade }) {
         <UilTimes onClick={setExpanded} />
       </div>
 
-      <div className="chartContainer">
+      {/* <div className="chartContainer">
         <div>
           <div>{"Confirm to submit"}</div>
           <div>
-            {/* <div className="col">
-              <label htmlFor="">Comments: </label>
-            </div> */}
+      
             <div className="col">
               <textarea
                 id="comments"
@@ -192,7 +251,7 @@ function ExpandedCard({ param, setExpanded, complete, grade }) {
             </button>
           </div>
         </div>
-      </div>
+      </div> */}
     </motion.div>
   );
 }

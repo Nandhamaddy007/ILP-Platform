@@ -35,7 +35,7 @@ class DonutChart extends React.Component {
                 total: {
                   showAlways: true,
                   show: true,
-                  fontSize: "22px",
+                  fontSize: "20px",
                   fontFamily: "Poppins",
                 },
               },

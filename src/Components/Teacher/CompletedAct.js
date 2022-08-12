@@ -69,7 +69,6 @@ export default function CompletedActComponent(props) {
           sx={{
             borderRadius: ".5rem",
             boxShadow: "0px 0px 4px 1px #888888",
-            background: "#f5f5f5",
           }}
         >
           <AccordionSummary
