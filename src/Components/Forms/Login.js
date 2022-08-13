@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "../Forms/forms.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import image from "../../assets/logo/new_log.png";
 import Navbar from "../Navbar";
 import Swal from "sweetalert2";
@@ -61,11 +61,11 @@ const Login = () => {
     let isValid = true;
 
     if (number.trim().length > 10) {
-      numberErr.numberShort = "Invalid Number !";
+      numberErr.numberShort = "Mobile Number is Required !";
       isValid = false;
     }
     if (number.trim().length < 10) {
-      numberErr.numberShort = "Invalid Number !";
+      numberErr.numberShort = " Mobile Number is Required !";
 
       isValid = false;
     }
@@ -75,7 +75,7 @@ const Login = () => {
     }
 
     if (password.trim().length < 6) {
-      passwordErr.passwordShort = "should be 6 character !";
+      passwordErr.passwordShort = "Enter the correct password !";
       isValid = false;
     }
 
@@ -85,8 +85,7 @@ const Login = () => {
   };
 
   return (
-    <>
-      {" "}
+    <div>
       <Navbar />
       <main className="class-container">
         <div className="login-body">
@@ -176,7 +175,8 @@ const Login = () => {
           </div>
         </div>
       </main>
-    </>
+    </div>
   );
 };
 export default Login;
+

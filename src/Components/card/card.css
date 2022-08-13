@@ -5,11 +5,14 @@
   border-radius: 0.7rem;
   padding: 1rem;
   position: relative;
-  cursor: pointer;
+  /* cursor: pointer; */
   justify-content: center;
   transition: box-shadow .3s;
   /* border: 1px solid #86c9ff; 
     box-shadow: 0 0 11px rgba(33,33,33,.2);  */
+}
+.pointer{
+  cursor: pointer;
 }
 
 /* .CompactCard:hover {
@@ -42,21 +45,21 @@
     width: 1.5rem;
     margin-top: -3px;
 }
+.activity-heading{
+  margin-left: .75rem;
+}
 .activity-header{
   width: 100%;
   display: flex;
   justify-content: flex-start;
-  margin-bottom: .5rem;
+  margin-bottom: 1rem;
 }
-.activity-heading{
-  margin-left: .75rem;
-}
-.ExpandedCard {
+
+.ExpandedCard-act-2 {
   position: absolute;
-  width: 40%;
-  height: 40vh;
+ width: 30%;
+    height: 25vh;
   z-index: 9;
-  left: 13rem;
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
@@ -64,21 +67,121 @@
   justify-content: space-around;
   padding: 1rem;
 }
-.incompletedIndication{
+.ExpandedCard-act {
+    position: absolute;
+    width: 30%;
+    height: 25vh;
+    z-index: 9;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1rem;
+}
+.ExpandedCard {
+  position: absolute;
+    width: 30%;
+    height: 35vh;
+    z-index: 9;
+    left: 2rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem;
+}
+/* .incompletedIndication{
     background-color: gainsboro;
     padding: .1rem .5rem;
     border-radius: 1rem;
     margin-left: .5rem;
-}
+} */
 .completedIndication{
-    background-color: rgb(57, 190, 80);
-    padding: .1rem .5rem;
-    border-radius: 1rem;
-    margin-left: .5rem;
+    background-color: #c4c4c4;
+ 
+    color: #fff;
+    /* padding: .1rem .5rem; */
+    border-radius: .5rem;
+    /* margin-left: .5rem; */
+    border: none;
+    width: inherit;
 }
-
+.cc{
+     background:green;
+}
+.completedIndication:active{
+ 
+  /* background-color: rgb(57, 190, 80); */
+    transform: scale(0.98);
+ 
+}
+.confirm-act-button{
+  border: none;
+  border: 1px solid;
+  width: 100%;
+  border-radius: .3rem;
+  background-color: #ffbc53;
+  color: #fff;
+}
+.confirm-act-button-sucess{
+  border: none;
+  border: 1px solid;
+  width: 100%;
+  border-radius: .3rem;
+  background-color: rgb(57, 190, 80);
+  color: #fff;
+}
+.Career-Choice-btn{
+  width: 100%;
+  width: 100%;
+  border: none;
+    border-radius: .4rem;
+    /* background: #ffeaa6; */
+    height: 2rem;
+}
+.Career-Choice-btn:active{
+ 
+  /* background-color: rgb(57, 190, 80); */
+    transform: scale(0.98);
+ 
+}
+.arrowIcon{
+  position: relative;
+  left: 1.2rem;
+}
+/* .confirm-act-button-error{
+  border: none;
+  border: 1px solid;
+  width: 100%;
+  border-radius: .3rem;
+  background-color: red;
+  color: #fff;
+} */
+/* .confirm-act-button:hover{
+ 
+  background-color: rgb(57, 190, 80);
+ 
+} */
+/* .confirm-act-button:active{
+ 
+  background-color: rgb(57, 190, 80);
+    transform: scale(0.98);
+ 
+} */
 
 @media screen and (max-width: 1200px) {
+  .ExpandedCard-act-2 {
+    top: 2rem;
+    height: 45vh;
+    left: 6rem;
+  }
+  .ExpandedCard-act {
+    top: 2rem;
+    height: 45vh;
+    left: 6rem;
+  }
   .ExpandedCard {
     top: 2rem;
     height: 45vh;
@@ -87,34 +190,116 @@
 }
 
 @media screen and (max-width: 768px) {
+
+  .ExpandedCard-act-2 {
+    top: 50rem;
+    height: 20%;
+    left: 5rem;
+    width: 70%;
+  }
+  .ExpandedCard-act {
+    top: 30rem;
+    height: 20%;
+    left: 5rem;
+    width: 70%;
+  }
   .ExpandedCard {
     top: 8rem;
     height: 40%;
     left: 25px;
     width: 80%;
   }
-}
 
+}
+@media screen and (max-width: 576px) {
+.card-bottom{
+  margin-bottom: 4rem;
+}
+}
 @media screen and (max-width: 480px) {
+  .ExpandedCard-act-2 {
+    top: 41rem;
+    height: 23%;
+    left: 2.5rem;
+    width: 80%;
+  }
+.card-bottom{
+  margin-bottom: 2rem;
+}
+ .ExpandedCard-act {
+    top: 26rem;
+    height: 23%;
+    left: 2.5rem;
+    width: 80%;
+}
   .ExpandedCard {
     top: 8rem;
     height: 30%;
     left: 25px;
     width: 80%;
   }
+  .activity-header{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+ 
+}
+
+
+}
+@media screen and (max-width: 365px) {
+.card-bottom{
+  margin-bottom: 1rem;
+}
+.arrowIcon{
+  position: relative;
+  left: .7rem;
+}
+.completedIndication{
+  width:30%;
+  font-size: .6rem;
+  display: flex;
+  padding: .1rem .5rem;
+}
+pre{
+  font-size: .7rem;
+}
 }
 
 @media screen and (max-width: 480px) {
   .CompactCard {
     display: flex;
     flex: 1;
-    height: 11.5rem !important;
+    height: 13.5rem !important;
     border-radius: 0.7rem;
     color: white;
     padding: 1rem;
     position: relative;
-    cursor: pointer;
+    /* cursor: pointer; */
     justify-content: center;
 
   }
 }
+@media screen and (max-width: 325px) {
+  .arrowIcon{
+  position: relative;
+  left: .2rem;
+}
+}
+/* @media screen and (max-width: 390px) {
+
+  .incompletedIndication{
+    background-color: gainsboro;
+    padding: .1rem .5rem;
+    border-radius: 1rem;
+    margin-left: .5rem;
+    font-size: small;
+}
+  .completedIndication{
+     background-color: rgb(57, 190, 80);
+    padding: .1rem .5rem;
+    border-radius: 1rem;
+    margin-left: .5rem;
+    font-size: small;
+}
+}  */
