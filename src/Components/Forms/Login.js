@@ -43,14 +43,13 @@ const Login = () => {
   }
   const onSubmit = (e) => {
     e.preventDefault();
-    
     const isValid = formValidation();
     if (isValid) {
       let temp={
         userCode:number,
         password:password
       }
-      let url=""
+      let url="http://localhost:8090/Career-Tracking/login"
       postService(url,temp,after)
      
     }
@@ -144,7 +143,7 @@ const Login = () => {
                       <div className="formGroup">
                         <div className="row">
                           <div className="col">
-                            <button type="button" className="submit__button">
+                            <button type="submit" className="submit__button">
                               Login
                             </button>
                           </div>
