@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import image from "../../assets/logo/new_log.png";
 import Navbar from "../Navbar";
 import Swal from "sweetalert2";
+import postService from "../../services/postService";
 const Login = () => {
   let navigate = useNavigate();
   const [number, setNumber] = useState("");
@@ -34,14 +35,24 @@ const Login = () => {
       title: "Logged in successfully ",
     });
   };
+  const after=()=>{
+    alert();
+    navigate("/teacher");
+    setNumber("");
+    setPassword("");
+  }
   const onSubmit = (e) => {
     e.preventDefault();
+    
     const isValid = formValidation();
     if (isValid) {
-      alert();
-      navigate("/teacher");
-      setNumber("");
-      setPassword("");
+      let temp={
+        userCode:number,
+        password:password
+      }
+      let url=""
+      postService(url,temp,after)
+     
     }
   };
   const formValidation = () => {
@@ -133,7 +144,7 @@ const Login = () => {
                       <div className="formGroup">
                         <div className="row">
                           <div className="col">
-                            <button type="submit" className="submit__button">
+                            <button type="button" className="submit__button">
                               Login
                             </button>
                           </div>

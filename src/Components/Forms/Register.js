@@ -8,8 +8,23 @@ import Typography from "@mui/material/Typography";
 import axios from "axios";
 import Navbar from "../Navbar";
 import Swal from "sweetalert2";
+import postService from "../../services/postService";
 const Register = () => {
   const [show, setShow] = useState(false);
+  const registerSubmit=(data,after)=>{
+    let temp={
+      ...reg,
+      ...data
+    }
+    postService("",temp,after)
+  }
+  const [reg, setReg]= useState()
+  const setObj=(val)=>{
+    setReg({
+      ...reg,
+      ...val
+    })
+  }
   const ShowHide = (ev) => {
     // ev.preventDefault();
     setShow(!show);
@@ -33,8 +48,8 @@ const Register = () => {
                     <div class="divider"></div>
                     <p className="account-subtitle">Way to success</p>
 
-                    {!show && <HiddenFirst show={ShowHide} />}
-                    {show && <HiddenSecond />}
+                    {!show && <HiddenFirst show={ShowHide} setObj={setObj} />}
+                    {show && <HiddenSecond registerTeacher={registerSubmit} />}
                     <div className="register-or">
                       <span className="or-line"></span>
                       <span className="span-or">or</span>
@@ -57,6 +72,7 @@ const Register = () => {
   );
 };
 
+
 export const HiddenFirst = ({ show }) => {
   const initialValues = { userName: "", mobileNumber: "" };
   const [formValues, setFormValues] = useState(initialValues);
@@ -68,14 +84,21 @@ export const HiddenFirst = ({ show }) => {
     setFormValues({ ...formValues, [name]: value });
     // console.log(formValues);
   };
-
+const after=()=>{
+  show();
+  console.log(formValues);
+}
   const handleSubmit = (e) => {
     e.preventDefault();
     const valid = validate(formValues);
     if (!valid.mobileNumber && !valid.userName) {
-      postData();
-      show();
-      console.log(formValues);
+      let temp={
+        id:formValues.userName,
+        userCode:formValues.mobileNumber
+      }
+      let url=""
+      postService(url,temp,after)
+      
     } else {
       setFormErrors(valid);
     }
@@ -141,14 +164,14 @@ export const HiddenFirst = ({ show }) => {
 
         <div className="form__input--group">
           <button className="form__button _btn" id="register_btn" type="submit">
-            Register
+            Get OTP
           </button>
         </div>
       </form>
     </>
   );
 };
-export const HiddenSecond = () => {
+export const HiddenSecond = (props) => {
   let navigate = useNavigate();
   const initialValues = { otp: "", password: "", confirmPassword: "" };
   const [formValues, setFormValues] = useState(initialValues);
@@ -158,28 +181,30 @@ export const HiddenSecond = () => {
     setFormValues({ ...formValues, [name]: value });
     // console.log(formValues);
   };
-
+const after= ()=>{
+  Swal.fire({
+    toast: true,
+    icon: "success",
+    title: "You have successfully registered",
+    animation: false,
+    position: "top-right",
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener("mouseenter", Swal.stopTimer);
+      toast.addEventListener("mouseleave", Swal.resumeTimer);
+    },
+  });
+  console.log("final......" + JSON.stringify(formValues));
+  navigate("/login");
+}
   const handleSubmit = (e) => {
     e.preventDefault();
     const valid = validate(formValues);
     if (!valid.confirmPassword && !valid.password && !valid.otp) {
-      postData();
-      Swal.fire({
-        toast: true,
-        icon: "success",
-        title: "You have successfully registered",
-        animation: false,
-        position: "top-right",
-        showConfirmButton: false,
-        timer: 3000,
-        timerProgressBar: true,
-        didOpen: (toast) => {
-          toast.addEventListener("mouseenter", Swal.stopTimer);
-          toast.addEventListener("mouseleave", Swal.resumeTimer);
-        },
-      });
-      console.log("final......" + JSON.stringify(formValues));
-      navigate("/login");
+      props.registerTeacher(formValues,after)
+     
     } else {
       setFormErrors(valid);
     }
