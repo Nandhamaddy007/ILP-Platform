@@ -9,6 +9,7 @@ import axios from "axios";
 import Navbar from "../Navbar";
 import Swal from "sweetalert2";
 import postService from "../../services/postService";
+import putService from "../../services/putService";
 const Register = () => {
   const [show, setShow] = useState(false);
   const registerSubmit=(data,after)=>{
@@ -16,7 +17,7 @@ const Register = () => {
       ...reg,
       ...data
     }
-    postService("",temp,after)
+    putService("http://localhost:8090/Career-Tracking/register",temp,after)
   }
   const [reg, setReg]= useState()
   const setObj=(val)=>{
@@ -98,7 +99,7 @@ const after=()=>{
         id:formValues.userName,
         userCode:formValues.mobileNumber
       }
-      let url=""
+      let url="http://localhost:8090/Career-Tracking/otp"
       postService(url,temp,after)
       
     } else {
