@@ -20,6 +20,7 @@ const Register = () => {
   }
   const [reg, setReg]= useState()
   const setObj=(val)=>{
+    console.log("23 register",val)
     setReg({
       ...reg,
       ...val
@@ -73,7 +74,7 @@ const Register = () => {
 };
 
 
-export const HiddenFirst = ({ show }) => {
+export const HiddenFirst = ({ show,setObj}) => {
   const initialValues = { userName: "", mobileNumber: "" };
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
@@ -87,6 +88,7 @@ export const HiddenFirst = ({ show }) => {
 const after=()=>{
   show();
   console.log(formValues);
+  setObj(formValues)
 }
   const handleSubmit = (e) => {
     e.preventDefault();
